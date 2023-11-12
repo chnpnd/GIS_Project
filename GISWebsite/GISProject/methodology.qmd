@@ -14,17 +14,17 @@ Geo Eye satellite images for Libya, downloaded from [Libya Floods](https://www.m
 
 # Accessibility Analysis
 
-1. Extract motor vehicle road network.
+1.  Extract motor vehicle road network.
 
-2. Create 3 hexagon layers: Hexagon base, Accessibility for Before Flood, and Accessibility for After Flood.
+2.  Create 3 hexagon layers: Hexagon base, Accessibility for Before Flood, and Accessibility for After Flood.
 
-3. Generate hexagon centroids to calculate the distances between hexagon centroids and hospitals with the Origin-Destination Matrix Tool.
+3.  Generate hexagon centroids to calculate the distances between hexagon centroids and hospitals with the Origin-Destination Matrix Tool.
 
-4. Extracting shortest distance pairs using SQL in DB Manager.
+4.  Extracting shortest distance pairs using SQL in DB Manager.
 
-5. Map accessibility values of hospitals.
+5.  Map accessibility values of hospitals.
 
-6. Generate choropleth maps for both Before and After hexagons.
+6.  Generate choropleth maps for both Before and After hexagons.
 
 ## Data Preparation and Cleaning
 
@@ -32,27 +32,49 @@ Geo Eye satellite images for Libya, downloaded from [Libya Floods](https://www.m
 
 To add the Flood Extent (PHR_20230913_FloodExtent_Derna.shp),
 
-1. Click **Layer** → **Add Layer** → **Add Vector Layer…**.
-2. Under **Data Source Manager | Vector** dialog,
-   1. Click “**...**” and browse “PHR_20230913_FloodExtent_Derna.shp”
-   2. Click **Add**.
+1.  Click **Layer** → **Add Layer** → **Add Vector Layer...**.
+2.  Under **Data Source Manager \| Vector** dialog,
+    1.  Click "**...**" and browse "PHR_20230913_FloodExtent_Derna.shp"
+    2.  Click **Add**.
 
-### Health Facilities
+### Health Facilities {#health-facilities}
 
 To add the Libya Health Facilities (hotosm_lby_health_facilities_points_shp_point.shp),
 
-1. Click **Layer** → **Add Layer** → **Add Vector Layer…**.
-2. Under **Data Source Manager | Vector** dialog,
-   1. Click “**...**” and browse “hotosm_lby_health_facilities_points_shp_point.shp”
-   2. Click **Add**.
-3. To save as Geopackage, right-click “hotosm_lby_health_facilities_points_shp_point.shp” layer → **Export** → **Save Features As**.
-4. Under **Save Vector Layer** as dialog,
-   1. Format: GeoPackage
-   2. File name: Click the “...” button to create “Derna” GeoPackage in the “GeoPackage” folder.
-   3. Layer: Derna_Hospitals_Before
-   4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-   5. Click OK.
-5. Open **OpenStreetMap** by expanding **XYZ Tiles**.
+1.  Click **Layer** → **Add Layer** → **Add Vector Layer...**.
+2.  Under **Data Source Manager \| Vector** dialog,
+    1.  Click "**...**" and browse "hotosm_lby_health_facilities_points_shp_point.shp"
+    2.  Click **Add**.
+3.  We will include the hexagon map and extract the hospitals and roads within the Derna 250m hexagon.
+4.  Under **Data Source Manager \| Vector** dialog,
+    1.  Click "**...**" and browse "Derna_city_250m_hexagon.shp"
+    2.  Click **Add**.
+5.  To save as Geopackage, right-click \"Derna_city_250m_hexagon.shp\" layer → **Export** → **Save Features As**.
+6.  Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+
+    2.  File name: Click the \"...\" button and select \"Derna\" GeoPackage in the \"GeoPackage\" folder.
+
+    3.  Layer: derna_city_250m_hexagon
+
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+
+    5.  Click **Ok**.
+7.  Click **Vector** → **Geoprocessing Tools** → **Clip**.
+8.  Under **Clip** dialog,
+    1.  Input layer: hotosm_lby_health_facilities_points_shp_point
+
+    2.  Overlay layer: derna_city_250m_hexagon
+
+    3.  Click **Run**.
+9.  To save as Geopackage, right-click "hotosm_lby_health_facilities_points_shp_point.shp" layer → **Export** → **Save Features As**.
+10. Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button to create "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: Derna_Hospitals_Before
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
+11. Open **OpenStreetMap** by expanding **XYZ Tiles**.
 
 ![](images/OpenStreetMap.PNG)
 
@@ -60,38 +82,38 @@ Looking at the Health Facilities data in the OpenStreetMap (OSM), there are cert
 
 ![](images/Access_MissingHospital.PNG)
 
-6. In the Layers tab, right-click “Derna_Hospitals_Before” → **Toggle Editing**.
-7. Click **Add Point Feature** and add a point in the red circled area.
+12. In the Layers tab, right-click "Derna_Hospitals_Before" → **Toggle Editing**.
+13. Click **Add Point Feature** and add a point in the red circled area.
 
 ![](images/Access_OSM-Hospital-Comparison.PNG)
 
-8. Under the **Factor Attributes** dialog,
-   1. Amenity: hospital
-   2. Click OK.
-   
+14. Under the **Factor Attributes** dialog,
+    1.  Amenity: hospital
+    2.  Click **Ok**.
+
 ![](images/Access_AddedHospital.PNG)
 
-9. To clean the data, right-click “Derna_Hospitals_Before” layer → **Open Attribute Table**.
+15. To clean the data, right-click "Derna_Hospitals_Before" layer → **Open Attribute Table**.
 
 ![](images/Access_HospitalAttribute.PNG)
 
-10. Click **Toggle Editing Mode** → **Delete Field**.
-11. Delete source, building, operator_t, healthcare, addr_full, addr_city, healthca_1, name_ar, name, capacity_p.
-12. Click **Toggle Editing Mode** → **Save**. Close the **Attribute Table** screen.
+16. Click **Toggle Editing Mode** → **Delete Field**.
+17. Delete source, building, operator_t, healthcare, addr_full, addr_city, healthca_1, name_ar, name, capacity_p.
+18. Click **Toggle Editing Mode** → **Save**. Close the **Attribute Table** screen.
 
 For the analysis for after flood, we have to remove the affected hospitals.
 
-1. Duplicate "Derna_Hospitals_Before" and save as GeoPackage.
-2. Click Vector → Geoprocessing Tools → Difference.
-    1. Input layer: Derna_Hospitals_Before *copy*
-    2. Overlay layer: PHR_20230913_FloodExtent_Derna
-    3. Click Run.
-3. Under **Save Vector Layer** as dialog,
-   1. Format: GeoPackage
-   2. File name: Click the “...” button to select “Derna” GeoPackage in the “GeoPackage” folder.
-   3. Layer: Derna_Hospitals_After
-   4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-   5. Click OK.
+1.  Duplicate "Derna_Hospitals_Before" and save as GeoPackage.
+2.  Click Vector → Geoprocessing Tools → Difference.
+    1.  Input layer: Derna_Hospitals_Before *copy*
+    2.  Overlay layer: PHR_20230913_FloodExtent_Derna
+    3.  Click **Run**.
+3.  Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button to select "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: Derna_Hospitals_After
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
 
 ![](images/Access_HospitalAfter.PNG)
 
@@ -99,77 +121,58 @@ For the analysis for after flood, we have to remove the affected hospitals.
 
 To add the Road Network data (gis_osm_roads_free_1.shp).
 
-1. Repeat steps 1 to 4 from [Health Facilities](#health-facilities).
-   1. Step 4
-      1. Layer: Derna_Roads (Before)
-2. Click **Layer** → **Add Layer** → **Add Vector Layer…**.
-
-We will include the hexagon map and extract the roads within the Derna 250m hexagon.
-
-3. Under **Data Source Manager | Vector** dialog,
-   1. Click “**...**” and browse “Derna_city_250m_hexagon.shp”
-   2. Click **Add**.
-
-![](images/Access_HexagonRoads.PNG)
-
-We will save the Derna 250m hexagon map as GeoPackage to set the projection layer.
-
-4. To save as Geopackage, right-click “Derna_city_250m_hexagon.shp” layer → **Export** → **Save Features As**.
-5. Under **Save Vector Layer** as dialog,
-   1. Format: GeoPackage
-   2. File name: Click the “...” button and select “Derna” GeoPackage in the “GeoPackage” folder.
-   3. Layer: derna_city_250m_hexagon
-   4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-   5. Click OK.
-6. Click **Vector** → **Geoprocessing Tools** → **Clip**.
-7. Under **Clip** dialog,
-   1. Input layer: Derna_Roads_Before
-   2. Overlay layer: derna_city_250m_hexagon
-   3. Click Run.
+1.  Repeat steps 1 to 4 from [Health Facilities](#health-facilities).
+    1.  Step 4
+        1.  Layer: Derna_Roads (Before)
+2.  Click **Layer** → **Add Layer** → **Add Vector Layer...**.
+3.  Click **Vector** → **Geoprocessing Tools** → **Clip**.
+4.  Under **Clip** dialog,
+    1.  Input layer: gis_osm_roads_free_1
+    2.  Overlay layer: derna_city_250m_hexagon
+    3.  Click **Run**.
 
 However, there are missing roads that are not captured in OSM here.We have to manually add these roads to have a more accurate representation of accuracy analysis.
 
 ![](images/Access_MissingRoads.PNG)
 
-8. In the Layers tab, right-click “Derna_Roads_Before.shp” → **Toggle Editing**.
-9. Click **Add Line Feature** and add missing lines to connect the roads.
-10. Under the **Factor Attributes** dialog,
-    1. fclass: residential
-    2. Click OK.
+5.  In the Layers tab, right-click "Derna_Roads_Before.shp" → **Toggle Editing**.
+6.  Click **Add Line Feature** and add missing lines to connect the roads.
+7.  Under the **Factor Attributes** dialog,
+    1.  fclass: residential
+    2.  Click **Ok**.
 
 ![](images/Access_Roads.PNG)
 
 We will extract motor vehicle road network (motorway, motorway_link, primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, residential, trunk and trunk_link) from Derna_Roads_Before layer.
 
-11. In the Layers tab, right-click "Derna_Roads_Before" → **Open Attribute Table**.
-12. Click **Select features using an expresssion**.
-13. Under **Select by Expression** dialog,
+8.  In the Layers tab, right-click "Derna_Roads_Before" → **Open Attribute Table**.
+9.  Click **Select features using an expresssion**.
+10. Under **Select by Expression** dialog,
 
-Input below as expression:
-"fclass" = 'footway' OR "fclass" = 'living_steet' OR "fclass" = 'path' OR "fclass" = 'service' OR "fclass" = 'track' OR "fclass" = 'unclassified'
+Input below as expression: "fclass" = 'footway' OR "fclass" = 'living_steet' OR "fclass" = 'path' OR "fclass" = 'service' OR "fclass" = 'track' OR "fclass" = 'unclassified'
 
-14. Click **Select Features** → **Close**.
-15. Click **Toggle Editing** → **Delete selected features** → Confirm **Delete Feature(s)** 
-16. To clean the data, click **Delete Field**.
+11. Click **Select Features** → **Close**.
+12. Click **Toggle Editing** → **Delete selected features** → Confirm **Delete Feature(s)**
+13. To clean the data, click **Delete Field**.
 
 ![](images/Access_RoadsAttribute.PNG)
 
-17. Delete name, ref, layer.
-18. Click **Toggle Editing Mode** → **Save**. Close the **Attribute Table** screen.
+14. Delete name, ref, layer.
+15. Click **Toggle Editing Mode** → **Save**. Close the **Attribute Table** screen.
 
 For the analysis for after flood, we have to remove the affected roads.
 
-1. Duplicate "Derna_Roads_Before" and save as GeoPackage.
-2. Click Vector → Geoprocessing Tools → Difference.
-    1. Input layer: Derna_Roads_Before *copy*
-    2. Overlay layer: PHR_20230913_FloodExtent_Derna
-    3. Click Run.
-3. Under **Save Vector Layer** as dialog,
-   1. Format: GeoPackage
-   2. File name: Click the “...” button to select “Derna” GeoPackage in the “GeoPackage” folder.
-   3. Layer: Derna_Roads_After
-   4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-   5. Click OK.
+1.  Duplicate "Derna_Roads_Before" and save as GeoPackage.
+2.  Click Vector → Geoprocessing Tools → Difference.
+    1.  Input layer: Derna_Roads_Before *copy*
+    2.  Overlay layer: PHR_20230913_FloodExtent_Derna
+    3.  Click **Run**.
+3.  Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button to select "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: Derna_Roads_After
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
 
 ![](images/Access_RoadsAfter.PNG)
 
@@ -177,121 +180,428 @@ For the analysis for after flood, we have to remove the affected roads.
 
 We will setup 2 extra duplicated hexagons for the before and after chropleth maps for the accessibility analysis.
 
-1. Duplicate "derna_city_250m_hexagon" in Layer twice, and rename each of the layer accordingly.
-    1. Accesibility to Hospitals (Before)
-    2. Accesibility to Hospitals (After)
-2. Compute hexagon centroids by select **Vector** -> **Geometry Tools** -> **Centroids**.
-3. Under **Centroids** dialog,
-    1. Input layer: derna_city_250m_hexagon
-    2. Click **Run** and **Close**.
+1.  Duplicate "derna_city_250m_hexagon" in Layer twice, and rename each of the layer accordingly.
+    1.  Accesibility to Hospitals (Before)
+    2.  Accesibility to Hospitals (After)
+2.  Compute hexagon centroids by select **Vector** -\> **Geometry Tools** -\> **Centroids**.
+3.  Under **Centroids** dialog,
+    1.  Input layer: derna_city_250m_hexagon
+    2.  Click **Run** and **Close**.
 
 ![](images/Access_Centroids.PNG)
 
-4. To save as Geopackage, right-click “Centroids.shp” layer → **Export** → **Save Features As**.
-5. Under **Save Vector Layer** as dialog,
-   1. Format: GeoPackage
-   2. File name: Click the “...” button and select “Derna” GeoPackage in the “GeoPackage” folder.
-   3. Layer: hex_centroid
-   4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-   5. Click OK.
+4.  To save as Geopackage, right-click "Centroids.shp" layer → **Export** → **Save Features As**.
+5.  Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button and select "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: hex_centroid
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
 
 ## Networking Accessibility Analysis
 
 We will do the first analysis for before flood.
 
-1. Using the QNEAT3 plugin, select **Processing** → **Toolbox**.
-2. At the **Search** pane, type "OD Matrix".
-3. Click **OD Matrix Layers as Table (m:n)**.
-4. Under **OD Matrix Layers as Table (m:n) dialog**,
-    1. Network Layer: Derna_Roads_Before 
-    2. From-Point Layer: hex_centroid
-    3. Unique Point ID Field: fid
-    4. To-Point Layer: Derna_Hospitals_Before
-    5. Unique Point ID Field: fid
-    6. Optimization Criterion: Shortest Path (distance optimization) 
-    7. Entry Cost calculation method: Ellipsoidal
-    8. Direction field: oneway
-    9. Value for forward direction: F
+1.  Using the QNEAT3 plugin, select **Processing** → **Toolbox**.
+2.  At the **Search** pane, type "OD Matrix".
+3.  Click **OD Matrix Layers as Table (m:n)**.
+4.  Under **OD Matrix Layers as Table (m:n) dialog**,
+    1.  Network Layer: Derna_Roads_Before
+    2.  From-Point Layer: hex_centroid
+    3.  Unique Point ID Field: fid
+    4.  To-Point Layer: Derna_Hospitals_Before
+    5.  Unique Point ID Field: fid
+    6.  Optimization Criterion: Shortest Path (distance optimization)
+    7.  Entry Cost calculation method: Ellipsoidal
+    8.  Direction field: oneway
+    9.  Value for forward direction: F
     10. Value for backward direction: T
     11. Value for both direction: B
     12. Topology tolerance: 0.5
     13. Click **Run** and **Close**.
-5. To save as Geopackage, right-click “Output OD Matrix” layer → **Export** → **Save Features As**.
-6. Under **Save Vector Layer** as dialog,
-    1. Format: GeoPackage
-    2. File name: Click the “...” button and select “Derna” GeoPackage in the “GeoPackage” folder.
-    3. Layer: OD_Hospitals_Before
-    4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-    5. Click OK.
+5.  To save as Geopackage, right-click "Output OD Matrix" layer → **Export** → **Save Features As**.
+6.  Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button and select "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: OD_Hospitals_Before
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
+
 We will extract the SQL to select destination poins with the shortest distance.
-7. Select **Database** → **DB Manager...**.
-8. Undet the **DB Manager** dialog, expand **Virtual Layers**, expand **Project layers** and click **SQL Window**.
-9. Input this expression:
-select origin_id, destination_id, min(total_cost) as shortest_distance
-from OD_Hospitals_Before group by origin_id
+
+7.  Select **Database** → **DB Manager...**.
+8.  Undet the **DB Manager** dialog, expand **Virtual Layers**, expand **Project layers** and click **SQL Window**.
+9.  Input this expression: select origin_id, destination_id, min(total_cost) as shortest_distance from OD_Hospitals_Before group by origin_id
 10. Click **Execute** → Check **Load as new layer** → **Load** → Close the DB Manager.
 
 ![](images/Access_OD_Before.PNG)
 
-11. To save as Geopackage, right-click “QueryLayer” layer → **Export** → **Save Features As**.
+11. To save as Geopackage, right-click "QueryLayer" layer → **Export** → **Save Features As**.
 12. Under **Save Vector Layer** as dialog,
-    1. Format: GeoPackage
-    2. File name: Click the “...” button and select “Derna” GeoPackage in the “GeoPackage” folder.
-    3. Layer: acc_hospitals_before
-    4. CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
-    5. Click OK.
-
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button and select "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: acc_hospitals_before
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
 13. To join "acc_hospitals_before" and "Accesibility to Hospitals (Before)", right-click on "Accesibility to Hospitals (Before)" layer, select **Properties**.
 14. Click **Joins** → **+**.
 15. Under **Add Vector Join** dialog,
-     1. Join layer: acc_hospitals_before
-     2. Join field: origin_id
-     3. Target field: fid
-     4. Click OK
-
+    1.  Join layer: acc_hospitals_before
+    2.  Join field: origin_id
+    3.  Target field: fid
+    4.  Click **Ok**.
 16. Click **Symbology**, and under the page,
-     1. Select **Graduated**.
-     2. Value: acc_hospitals_before_shortest_distance
-     3. Color ramp: Blues → Invert Color Ramp.
-     4. Classes: 5
-     5. Click **Classify**, **Apply** and **OK**.
+    1.  Select **Graduated**.
+    2.  Value: acc_hospitals_before_shortest_distance
+    3.  Color ramp: Blues → Invert Color Ramp.
+    4.  Classes: 5
+    5.  Click **Classify**, **Apply** and **Ok**.
 
 ![](images/Access_HexagonBefore.PNG)
 
-We will do the same analysis for after flood. 
+We will do the same analysis for after flood.
 
-1. Repeat all of the above steps for Accesibility to Hospitals (After).
-    1. Step 4.
-        1. To-Point Layer: Derna_Hospitals_After
-    2. Step 6.
-        1. Layer: OD_Hospitals_After
-    3. Step 9.
-        1. Expression: select origin_id, destination_id, min(total_cost) as shortest_distance from OD_Hospitals_After group by origin_id.
+1.  Repeat all of the above steps for Accesibility to Hospitals (After).
+    1.  Step 4.
+        1.  To-Point Layer: Derna_Hospitals_After
+    2.  Step 6.
+        1.  Layer: OD_Hospitals_After
+    3.  Step 9.
+        1.  Expression: select origin_id, destination_id, min(total_cost) as shortest_distance from OD_Hospitals_After group by origin_id.
 
 ![](images/Access_OD_After.PNG)
 
-       4. Step 12.
-          1. Layer: acc_hospitals_after
-       5. Step 15.
-          1. Join layer: acc_hospitals_after
-       6. Step 16.
-          1. Color ramp: Greens → Invert Color Ramp.
+```         
+   4. Step 12.
+      1. Layer: acc_hospitals_after
+   5. Step 15.
+      1. Join layer: acc_hospitals_after
+   6. Step 16.
+      1. Color ramp: Greens → Invert Color Ramp.
+```
 
 ![](images/Access_HexagonAfter.PNG)
 
-
-
 # Suitability Analysis
-1. Generate proximity maps for each by converting vector data to raster data.
 
-2. Generate ranking models for each feature.
+1.  Generate proximity maps for each by converting vector data to raster data.
 
-3. Carry out an AHP Analysis to obtain the importance of each feature.
+2.  Generate ranking models for each feature.
 
-4. Combine different ranking maps into one output, using the weightages from the AHP Analysis, and multiplying them to their respective features using the Raster Calculator.
+3.  Carry out an AHP Analysis to obtain the importance of each feature.
 
-5. From the resulting output, we classify the suitability factor by using Reclassification by Table.
+4.  Combine different ranking maps into one output, using the weightages from the AHP Analysis, and multiplying them to their respective features using the Raster Calculator.
 
-6. We identified 3 as the minimum level for an area to be considered "Suitable".
+5.  From the resulting output, we classify the suitability factor by using Reclassification by Table.
 
----
+6.  We identified 3 as the minimum level for an area to be considered "Suitable".
+
+## Data Preparation and Cleaning
+
+### Buildings
+
+To add the Buildings data (gis_osm_buildings_a_free_1.shp).
+
+1.  Click **Layer** → **Add Layer** → **Add Vector Layer...**.
+
+2.  Under **Data Source Manager \| Vector** dialog,
+
+    1.  Click \"**...**\" and browse \"gis_osm_buildings_a_free_1.shp\"
+
+    2.  Click **Add**.
+
+3.  Click **Vector** → **Geoprocessing Tools** → **Clip**.
+
+4.  Under **Clip** dialog,
+
+    1.  Input layer: gis_osm_buildings_a_free_1
+
+    2.  Overlay layer: derna_city_250m_hexagon
+
+    3.  Click **Run**.
+
+    ![](images/Access_Buildings.PNG)
+
+5.  To save as Geopackage, right-click \"gis_osm_buildings_a_free_1.shp\" layer → **Export** → **Save Features As**.
+
+6.  Under **Save Vector Layer** as dialog,
+
+    1.  Format: GeoPackage
+
+    2.  File name: Click the \"...\" button to select \"Derna\" GeoPackage in the \"GeoPackage\" folder.
+
+    3.  Layer: Derna_Buildings_Before
+
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+
+    5.  Click **Ok**.
+
+7.  To clean the data, right-click \"Derna_Buildings_Before\" layer → **Open Attribute Table**.
+
+    ![](images/Access_BuildingsAttribute.PNG)
+
+8.  Click **Toggle Editing Mode** → **Delete Field**.
+
+9.  Delete all fields except for fid and osm_id.
+
+10. Click **Toggle Editing Mode** → **Save**. Close the **Attribute Table** screen.
+
+### Flood Impact Assessment
+
+To add the Elevation Model (hdr.adf) in [Libya - Elevation Model](https://data.humdata.org/dataset/libya-elevation-model),
+
+1.  Click **Layer** → **Add Layer** → **Add Raster Layer...**.
+2.  Under **Data Source Manager \| Raster** dialog,
+    1.  Click "**...**" and browse "hdr.adf"
+    2.  Click **Add**.
+3.  To save as Geopackage, right-click "lyb_strm_250m.shp" layer → **Export** → **Save Features As**.
+4.  Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+    2.  File name: Click the "..." button to select "Derna" GeoPackage in the "GeoPackage" folder.
+    3.  Layer: DEM
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    5.  Click **Ok**.
+
+![](images/Suit_DEM.PNG)
+
+Next, we will extract out the Derna area only.
+
+5.  Select **Raster** → **Extraction** → **Clip Raster by Mask Layer**.
+6.  Under **Clip Raster by Mask Layer** dialog,
+    1.  Input layer: DEM
+    2.  Mask layer: derna_city_250m_hexagon
+    3.  Click **Run** and **Close**.
+7.  Replace the "DEM" in the 'Derna' GeoPackage with the "Clipped" layer.
+
+![](images/Suit_DernaDEM.PNG)
+
+## Multicriteria Decision Analysis for Derna's Land Suitability
+
+### Raster and Proximity Layers
+
+We will create Raster and Proximity layers to find a suitable area for evacuation centres.
+
+#### Buildings
+
+1.  Select **Raster** → **Conversion** → **Rasterize (Vector to Raster)**.
+2.  Under **Rasterize (Vector to Raster)** dialog,
+    1.  Input layer: Derna_Buildings_Before
+    2.  Output raster size units: Georeferenced units
+    3.  Width/Horizontal resolution: 5
+    4.  Height/Vertical resolution: 5
+    5.  Output extend: Calculate from Layer → DEM
+    6.  Click **Run** and **Close**.
+
+![](images/Suit_RasterBuildings.PNG)
+
+3.  Right click Rasterized, select **Export** → **Save As**.
+4.  Under **Save Raster Layer as** dialog,
+    1.  Format: GeoTIFF
+    2.  File name: Click the "..." button and add "raster_buildings" in the "GeoTiff" folder.
+    3.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Ok** and **Close**.
+
+We will create the proximity layer next.
+
+1.  Select **Raster** → **Analysis** → **Proximity (Raster Distance)**.
+2.  Under **Proximity (Raster Distance)** dialog,
+    1.  Input layer: raster_buildings
+    2.  Distance units: Georeferenced coordinates
+    3.  Output data type: Float32 (This should be by default)
+    4.  Click **Run** and **Close**.
+
+![](images/Suit_ProxBuildings.PNG)
+
+3.  Right click Proximity map, select **Export** → **Save As**.
+4.  Under **Save Raster Layer as** dialog,
+    1.  Format: GeoTIFF
+    2.  File name: Click the "..." button and add "proximity_buildings" in the "GeoTiff" folder.
+    3.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Ok** and **Close**.
+5.  Remove Proximity map and Rasterized layers.
+
+#### Roads
+
+Repeat the same steps as [Buildings]. Below are the reference images for both raster_roads and proximity_roads.
+
+![Raster Roads](images/Suit_RasterRoads.PNG)
+
+![Proximity Roads](images/Suit_ProxRoads.PNG)
+
+#### Hospitals
+
+Repeat the same steps as [Buildings], however, we will be using "Derna_Hospitals_After" layer instead because of the flood extent. Below are the reference images for both raster_roads and proximity_roads.
+
+![Raster Hospital](images/Suit_RasterHospitals.PNG)
+
+![Proximity Hospitals](images/Suit_ProxHospitals.PNG)
+
+#### Slope
+
+We will compute the slope as another important factor to find suitable evacuation centres.
+
+1.  Select **Raster** → **Analysis** → **Slope**.
+2.  Under **Slope** dialog,
+    1.  Input layer: DEM
+    2.  Click **Run**.
+3.  Right click temporary Slope layer, select **Export** → **Save As**.
+4.  Under **Save Raster Layer as** dialog,
+    1.  Format: GeoTIFF
+    2.  File name: Click the "..." button and add "Slope" in the "GeoTiff" folder.
+    3.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Ok** and **Close**.
+5.  Remove the temporary Slope layer.
+
+### Ranking Model using AHP Analysis
+
+These are the criteria that were set to determine the suitability of building the university.
+
+[Accessibility factor] (**Roads**): \<=100m = 5, 100-200m = 4, 200-300m = 3, 300-500m = 2, \>500m = 1.
+
+[Healthcare factor and Urban Settlement factor] (**Hospitals**): \<=100m = 5, 100-300m = 4, 300-500m = 3, 500-750m = 2, \>750m = 1.
+
+[Economic factor] (**Slope**): \>20^o^ slope = 5, 18^o^-20^o^ = 4, 15^o^-28^o^ = 3, 12^o^-15^o^ = 2, \<=12^o^ = 1.
+
+#### Accessibility factor
+
+1.  Select **Processing** → **Toolbox**.
+
+2.  Search **Reclassify by Table** in the toolbox\'s search bar and double click it.
+
+3.  Under **Reclassify by Table** dialog,
+
+4.  Raster layer: proximity_roads
+
+5.  Click "..." at the end of Reclassification table
+
+    1.  Click **Add Row** and input values like the image shown below.
+
+    ![](images/Suit_Roads_Classification.png)
+
+    2.  Click **Ok**.
+    3.  Range boundaries: min \< value \<= max
+    4.  Output data type: Float 32 (This should be by default)
+    5.  Click **Run**.
+
+![](images/Suit_RankRoads.PNG)
+
+1.  Right click Reclassified raster layer, select **Export** → **Save As**.
+2.  Under **Save Raster Layer as** dialog,
+    1.  Format: GeoTIFF
+    2.  File name: Click the "..." button and add "rank_accessibility" in the "GeoTiff" folder.
+    3.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Ok** and **Close**.
+3.  Remove the Reclassified raster layer.
+
+#### Healthcare factor and Urban Settlement factor
+
+Repeat the same steps as [Accessibility factor]. Below are the reference images for rank_healthcare and rank_urban-settlement.
+
+![Reclassification table for Hospitals and Buildings](images/Suit_HospitalBuildings_Classification.PNG)
+
+![rank_healthcare](images/Suit_RankHospitals.PNG)
+
+![rank_urban-settlement](images/Suit_RankBuildings.PNG)
+
+#### Economic factor {data-link="Economic factor"}
+
+Repeat the same steps as [Accessibility factor]. Below are the reference images for rank_economic.
+
+![Reclassification table for Slope](images/Suit_Slope_Classification.PNG)
+
+![rank_economic](images/Suit_RankSlope.PNG)
+
+#### AHP Analysis {data-link="Accessibility factor"}
+
+We will compute the rank model using the AHP comparison matrix, and we have prioritized our factors as shown below.
+
+![](images/Suit_AHP.PNG){width="702"}
+
+Below is the AHP consistency score.
+
+![](images/Suit_AHPResults.PNG){width="370"}
+
+1.  Select **Processing** → **Toolbox**.
+
+2.  Search **Raster calculator** in the toolbox\'s search bar and double click it under "Raster analysis".
+
+3.  Under **Raster calculator** dialog,
+
+    1.  Expression: ("rank_accessibility\@1" \* 0.278) + ("rank_healthcare\@1" \* 0.177) + ("rank_economic\@1" \* 0.388) + ("rank_urban-settlement\@1" \* 0.158)
+
+    ![](images/Suit_RasterCalculator.PNG)
+
+    1.  Click "..." and select "DEM"
+    2.  Click **Ok**.
+    3.  Output CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Run** and **Close**.
+
+![](images/Suit_Factor.PNG)
+
+4.  Right click "Output" layer, select **Export** → **Save As**.
+5.  Under **Save Raster Layer as** dialog,
+    1.  Format: GeoTIFF
+    2.  File name: Click the "..." button and add "factor_suitability" in the "GeoTiff" folder.
+    3.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Ok** and **Close**.
+6.  Remove the "Output" layer.
+
+The factor layer should look like this as the image shown below.
+
+![](images/Suit_FactorLayer.PNG)
+
+7.  Select **Processing** à **Toolbox**.
+
+8.  Search **Reclassify by Table** in the toolbox\'s search bar and double click it.
+
+9.  Under **Reclassify by Table** dialog,
+
+    1.  Raster layer: factor_suitability
+    2.  Click "..." at the end of Reclassification table
+    3.  Click Add Row and input values like the image shown below.
+
+    ![](images/Suit_Suitability_Classification.PNG)
+
+    1.  Click **OK**.
+    2.  Range boundaries: min \<= value \< max
+    3.  Ouput data type: Float 32 (This should be by default)
+    4.  Click **Run**.
+
+![](images/Suit_MCDA.PNG)
+
+7.  Right click Reclassified raster layer, select **Export** à **Save As**.
+8.  Under **Save Raster Layer as** dialog,
+    1.  Format: GeoTIFF
+    2.  File name: Click the "..." button and add "MCDA_model" in the "GeoTiff" folder.
+    3.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+    4.  Click **Ok**.
+9.  Remove the Reclassified raster layer.
+
+We will set the MCDA Raster map into a Vector to remove the affected flood area.
+
+10. Select **Raster** à **Conversion** à **Polygonize (Raster to Vector)**.
+11. Under **Polygonize (Raster to Vector)** dialog,
+    1.  Input layer: MCDA_model
+    2.  Name of the field to create: DN
+    3.  Click **Run**.
+12. Click **Vector** → **Geoprocessing Tools** → **Clip**.
+13. Under **Clip** dialog,
+    1.  Input layer: Vectorized
+
+    2.  Overlay layer: PHR_20230913_FloodExtent_Derna
+
+    3.  Click **Run**.
+14. To save as Geopackage, right-click "Clipped" layer → **Export** → **Save Features As**.
+15. Under **Save Vector Layer** as dialog,
+    1.  Format: GeoPackage
+
+    2.  File name: Click the "..." button and select "Derna" GeoPackage in the "GeoPackage" folder.
+
+    3.  Layer: MCDA_Model_After
+
+    4.  CRS: EPSG: 32634 - WGS 84 / UTM zone 34N
+
+    5.  Click **Ok**.
+16. Adjust the layer properties until it looks like the image below.
+
+![](images/Suit_MCDA_After.PNG)

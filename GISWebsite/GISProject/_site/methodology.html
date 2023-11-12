@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>GISProject - GIS Analysis and Functions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">GISProject</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.qmd" rel="" target="">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./proposal.qmd" rel="" target="">
+ <span class="menu-text">Proposal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./methodology.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Methodology</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis.qmd" rel="" target="">
+ <span class="menu-text">Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./findings.qmd" rel="" target="">
+ <span class="menu-text">Findings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./lessons.qmd" rel="" target="">
+ <span class="menu-text">Lessons Learned</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataset-used" id="toc-dataset-used" class="nav-link active" data-scroll-target="#dataset-used">Dataset Used</a></li>
+  <li><a href="#accessibility-analysis" id="toc-accessibility-analysis" class="nav-link" data-scroll-target="#accessibility-analysis">Accessibility Analysis</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation-and-cleaning" id="toc-data-preparation-and-cleaning" class="nav-link" data-scroll-target="#data-preparation-and-cleaning">Data Preparation and Cleaning</a>
+  <ul class="collapse">
+  <li><a href="#flood-impact-assessment" id="toc-flood-impact-assessment" class="nav-link" data-scroll-target="#flood-impact-assessment">Flood Impact Assessment</a></li>
+  <li><a href="#health-facilities" id="toc-health-facilities" class="nav-link" data-scroll-target="#health-facilities">Health Facilities</a></li>
+  <li><a href="#road-network" id="toc-road-network" class="nav-link" data-scroll-target="#road-network">Road Network</a></li>
+  <li><a href="#derna_city_250m_hexagon" id="toc-derna_city_250m_hexagon" class="nav-link" data-scroll-target="#derna_city_250m_hexagon">Derna_city_250m_hexagon</a></li>
+  </ul></li>
+  <li><a href="#networking-accessibility-analysis" id="toc-networking-accessibility-analysis" class="nav-link" data-scroll-target="#networking-accessibility-analysis">Networking Accessibility Analysis</a></li>
+  </ul></li>
+  <li><a href="#suitability-analysis" id="toc-suitability-analysis" class="nav-link" data-scroll-target="#suitability-analysis">Suitability Analysis</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation-and-cleaning-1" id="toc-data-preparation-and-cleaning-1" class="nav-link" data-scroll-target="#data-preparation-and-cleaning-1">Data Preparation and Cleaning</a>
+  <ul class="collapse">
+  <li><a href="#buildings" id="toc-buildings" class="nav-link" data-scroll-target="#buildings">Buildings</a></li>
+  <li><a href="#flood-impact-assessment-1" id="toc-flood-impact-assessment-1" class="nav-link" data-scroll-target="#flood-impact-assessment-1">Flood Impact Assessment</a></li>
+  </ul></li>
+  <li><a href="#multicriteria-decision-analysis-for-dernas-land-suitability" id="toc-multicriteria-decision-analysis-for-dernas-land-suitability" class="nav-link" data-scroll-target="#multicriteria-decision-analysis-for-dernas-land-suitability">Multicriteria Decision Analysis for Derna’s Land Suitability</a>
+  <ul class="collapse">
+  <li><a href="#raster-and-proximity-layers" id="toc-raster-and-proximity-layers" class="nav-link" data-scroll-target="#raster-and-proximity-layers">Raster and Proximity Layers</a></li>
+  <li><a href="#ranking-model-using-ahp-analysis" id="toc-ranking-model-using-ahp-analysis" class="nav-link" data-scroll-target="#ranking-model-using-ahp-analysis">Ranking Model using AHP Analysis</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">GIS Analysis and Functions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="dataset-used" class="level1">
+<h1>Dataset Used</h1>
+<p>Derna_city_250m hexagon provided.</p>
+<p>Roads, buildings and places of interest data (labelled as POIS) from OpenStreetMap (OSM) data sets, downloaded from <a href="https://download.geofabrik.de/africa/libya.html">Libya</a> which is located in the Geofabrik download server</p>
+<p>Health facilities, elevation model and flood impact assessment downloaded from <a href="https://data.humdata.org/event/f1c3a777-4079-49fb-9d64-12a72f46f1e3">Libya Floods</a> which is located in the Humanitarian Data Exchange</p>
+<p>Geo Eye satellite images for Libya, downloaded from <a href="https://www.maxar.com/open-data/libya-floods-0923">Libya Floods</a> which is located in the Maxar Open Data Program.</p>
+</section>
+<section id="accessibility-analysis" class="level1">
+<h1>Accessibility Analysis</h1>
+<ol type="1">
+<li><p>Extract motor vehicle road network.</p></li>
+<li><p>Create 3 hexagon layers: Hexagon base, Accessibility for Before Flood, and Accessibility for After Flood.</p></li>
+<li><p>Generate hexagon centroids to calculate the distances between hexagon centroids and hospitals with the Origin-Destination Matrix Tool.</p></li>
+<li><p>Extracting shortest distance pairs using SQL in DB Manager.</p></li>
+<li><p>Map accessibility values of hospitals.</p></li>
+<li><p>Generate choropleth maps for both Before and After hexagons.</p></li>
+</ol>
+<section id="data-preparation-and-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-cleaning">Data Preparation and Cleaning</h2>
+<section id="flood-impact-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="flood-impact-assessment">Flood Impact Assessment</h3>
+<p>To add the Flood Extent (PHR_20230913_FloodExtent_Derna.shp),</p>
+<ol type="1">
+<li>Click <strong>Layer</strong> → <strong>Add Layer</strong> → <strong>Add Vector Layer…</strong>.</li>
+<li>Under <strong>Data Source Manager | Vector</strong> dialog,
+<ol type="1">
+<li>Click “<strong>…</strong>” and browse “PHR_20230913_FloodExtent_Derna.shp”</li>
+<li>Click <strong>Add</strong>.</li>
+</ol></li>
+</ol>
+</section>
+<section id="health-facilities" class="level3">
+<h3 class="anchored" data-anchor-id="health-facilities">Health Facilities</h3>
+<p>To add the Libya Health Facilities (hotosm_lby_health_facilities_points_shp_point.shp),</p>
+<ol type="1">
+<li>Click <strong>Layer</strong> → <strong>Add Layer</strong> → <strong>Add Vector Layer…</strong>.</li>
+<li>Under <strong>Data Source Manager | Vector</strong> dialog,
+<ol type="1">
+<li>Click “<strong>…</strong>” and browse “hotosm_lby_health_facilities_points_shp_point.shp”</li>
+<li>Click <strong>Add</strong>.</li>
+</ol></li>
+<li>We will include the hexagon map and extract the hospitals and roads within the Derna 250m hexagon.</li>
+<li>Under <strong>Data Source Manager | Vector</strong> dialog,
+<ol type="1">
+<li>Click “<strong>…</strong>” and browse “Derna_city_250m_hexagon.shp”</li>
+<li>Click <strong>Add</strong>.</li>
+</ol></li>
+<li>To save as Geopackage, right-click "Derna_city_250m_hexagon.shp" layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li><p>Format: GeoPackage</p></li>
+<li><p>File name: Click the "…" button and select "Derna" GeoPackage in the "GeoPackage" folder.</p></li>
+<li><p>Layer: derna_city_250m_hexagon</p></li>
+<li><p>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</p></li>
+<li><p>Click <strong>Ok</strong>.</p></li>
+</ol></li>
+<li>Click <strong>Vector</strong> → <strong>Geoprocessing Tools</strong> → <strong>Clip</strong>.</li>
+<li>Under <strong>Clip</strong> dialog,
+<ol type="1">
+<li><p>Input layer: hotosm_lby_health_facilities_points_shp_point</p></li>
+<li><p>Overlay layer: derna_city_250m_hexagon</p></li>
+<li><p>Click <strong>Run</strong>.</p></li>
+</ol></li>
+<li>To save as Geopackage, right-click “hotosm_lby_health_facilities_points_shp_point.shp” layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button to create “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: Derna_Hospitals_Before</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+<li>Open <strong>OpenStreetMap</strong> by expanding <strong>XYZ Tiles</strong>.</li>
+</ol>
+<p><img src="images/OpenStreetMap.PNG" class="img-fluid"></p>
+<p>Looking at the Health Facilities data in the OpenStreetMap (OSM), there are certain hospitals that are not registered. We will add missing information in the hospital data.</p>
+<p><img src="images/Access_MissingHospital.PNG" class="img-fluid"></p>
+<ol start="12" type="1">
+<li>In the Layers tab, right-click “Derna_Hospitals_Before” → <strong>Toggle Editing</strong>.</li>
+<li>Click <strong>Add Point Feature</strong> and add a point in the red circled area.</li>
+</ol>
+<p><img src="images/Access_OSM-Hospital-Comparison.PNG" class="img-fluid"></p>
+<ol start="14" type="1">
+<li>Under the <strong>Factor Attributes</strong> dialog,
+<ol type="1">
+<li>Amenity: hospital</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Access_AddedHospital.PNG" class="img-fluid"></p>
+<ol start="15" type="1">
+<li>To clean the data, right-click “Derna_Hospitals_Before” layer → <strong>Open Attribute Table</strong>.</li>
+</ol>
+<p><img src="images/Access_HospitalAttribute.PNG" class="img-fluid"></p>
+<ol start="16" type="1">
+<li>Click <strong>Toggle Editing Mode</strong> → <strong>Delete Field</strong>.</li>
+<li>Delete source, building, operator_t, healthcare, addr_full, addr_city, healthca_1, name_ar, name, capacity_p.</li>
+<li>Click <strong>Toggle Editing Mode</strong> → <strong>Save</strong>. Close the <strong>Attribute Table</strong> screen.</li>
+</ol>
+<p>For the analysis for after flood, we have to remove the affected hospitals.</p>
+<ol type="1">
+<li>Duplicate “Derna_Hospitals_Before” and save as GeoPackage.</li>
+<li>Click Vector → Geoprocessing Tools → Difference.
+<ol type="1">
+<li>Input layer: Derna_Hospitals_Before <em>copy</em></li>
+<li>Overlay layer: PHR_20230913_FloodExtent_Derna</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button to select “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: Derna_Hospitals_After</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Access_HospitalAfter.PNG" class="img-fluid"></p>
+</section>
+<section id="road-network" class="level3">
+<h3 class="anchored" data-anchor-id="road-network">Road Network</h3>
+<p>To add the Road Network data (gis_osm_roads_free_1.shp).</p>
+<ol type="1">
+<li>Repeat steps 1 to 4 from <a href="#health-facilities">Health Facilities</a>.
+<ol type="1">
+<li>Step 4
+<ol type="1">
+<li>Layer: Derna_Roads (Before)</li>
+</ol></li>
+</ol></li>
+<li>Click <strong>Layer</strong> → <strong>Add Layer</strong> → <strong>Add Vector Layer…</strong>.</li>
+<li>Click <strong>Vector</strong> → <strong>Geoprocessing Tools</strong> → <strong>Clip</strong>.</li>
+<li>Under <strong>Clip</strong> dialog,
+<ol type="1">
+<li>Input layer: gis_osm_roads_free_1</li>
+<li>Overlay layer: derna_city_250m_hexagon</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+</ol>
+<p>However, there are missing roads that are not captured in OSM here.We have to manually add these roads to have a more accurate representation of accuracy analysis.</p>
+<p><img src="images/Access_MissingRoads.PNG" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>In the Layers tab, right-click “Derna_Roads_Before.shp” → <strong>Toggle Editing</strong>.</li>
+<li>Click <strong>Add Line Feature</strong> and add missing lines to connect the roads.</li>
+<li>Under the <strong>Factor Attributes</strong> dialog,
+<ol type="1">
+<li>fclass: residential</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Access_Roads.PNG" class="img-fluid"></p>
+<p>We will extract motor vehicle road network (motorway, motorway_link, primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, residential, trunk and trunk_link) from Derna_Roads_Before layer.</p>
+<ol start="8" type="1">
+<li>In the Layers tab, right-click “Derna_Roads_Before” → <strong>Open Attribute Table</strong>.</li>
+<li>Click <strong>Select features using an expresssion</strong>.</li>
+<li>Under <strong>Select by Expression</strong> dialog,</li>
+</ol>
+<p>Input below as expression: “fclass” = ‘footway’ OR “fclass” = ‘living_steet’ OR “fclass” = ‘path’ OR “fclass” = ‘service’ OR “fclass” = ‘track’ OR “fclass” = ‘unclassified’</p>
+<ol start="11" type="1">
+<li>Click <strong>Select Features</strong> → <strong>Close</strong>.</li>
+<li>Click <strong>Toggle Editing</strong> → <strong>Delete selected features</strong> → Confirm <strong>Delete Feature(s)</strong></li>
+<li>To clean the data, click <strong>Delete Field</strong>.</li>
+</ol>
+<p><img src="images/Access_RoadsAttribute.PNG" class="img-fluid"></p>
+<ol start="14" type="1">
+<li>Delete name, ref, layer.</li>
+<li>Click <strong>Toggle Editing Mode</strong> → <strong>Save</strong>. Close the <strong>Attribute Table</strong> screen.</li>
+</ol>
+<p>For the analysis for after flood, we have to remove the affected roads.</p>
+<ol type="1">
+<li>Duplicate “Derna_Roads_Before” and save as GeoPackage.</li>
+<li>Click Vector → Geoprocessing Tools → Difference.
+<ol type="1">
+<li>Input layer: Derna_Roads_Before <em>copy</em></li>
+<li>Overlay layer: PHR_20230913_FloodExtent_Derna</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button to select “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: Derna_Roads_After</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Access_RoadsAfter.PNG" class="img-fluid"></p>
+</section>
+<section id="derna_city_250m_hexagon" class="level3">
+<h3 class="anchored" data-anchor-id="derna_city_250m_hexagon">Derna_city_250m_hexagon</h3>
+<p>We will setup 2 extra duplicated hexagons for the before and after chropleth maps for the accessibility analysis.</p>
+<ol type="1">
+<li>Duplicate “derna_city_250m_hexagon” in Layer twice, and rename each of the layer accordingly.
+<ol type="1">
+<li>Accesibility to Hospitals (Before)</li>
+<li>Accesibility to Hospitals (After)</li>
+</ol></li>
+<li>Compute hexagon centroids by select <strong>Vector</strong> -&gt; <strong>Geometry Tools</strong> -&gt; <strong>Centroids</strong>.</li>
+<li>Under <strong>Centroids</strong> dialog,
+<ol type="1">
+<li>Input layer: derna_city_250m_hexagon</li>
+<li>Click <strong>Run</strong> and <strong>Close</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Access_Centroids.PNG" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>To save as Geopackage, right-click “Centroids.shp” layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button and select “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: hex_centroid</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="networking-accessibility-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="networking-accessibility-analysis">Networking Accessibility Analysis</h2>
+<p>We will do the first analysis for before flood.</p>
+<ol type="1">
+<li>Using the QNEAT3 plugin, select <strong>Processing</strong> → <strong>Toolbox</strong>.</li>
+<li>At the <strong>Search</strong> pane, type “OD Matrix”.</li>
+<li>Click <strong>OD Matrix Layers as Table (m:n)</strong>.</li>
+<li>Under <strong>OD Matrix Layers as Table (m:n) dialog</strong>,
+<ol type="1">
+<li>Network Layer: Derna_Roads_Before</li>
+<li>From-Point Layer: hex_centroid</li>
+<li>Unique Point ID Field: fid</li>
+<li>To-Point Layer: Derna_Hospitals_Before</li>
+<li>Unique Point ID Field: fid</li>
+<li>Optimization Criterion: Shortest Path (distance optimization)</li>
+<li>Entry Cost calculation method: Ellipsoidal</li>
+<li>Direction field: oneway</li>
+<li>Value for forward direction: F</li>
+<li>Value for backward direction: T</li>
+<li>Value for both direction: B</li>
+<li>Topology tolerance: 0.5</li>
+<li>Click <strong>Run</strong> and <strong>Close</strong>.</li>
+</ol></li>
+<li>To save as Geopackage, right-click “Output OD Matrix” layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button and select “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: OD_Hospitals_Before</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p>We will extract the SQL to select destination poins with the shortest distance.</p>
+<ol start="7" type="1">
+<li>Select <strong>Database</strong> → <strong>DB Manager…</strong>.</li>
+<li>Undet the <strong>DB Manager</strong> dialog, expand <strong>Virtual Layers</strong>, expand <strong>Project layers</strong> and click <strong>SQL Window</strong>.</li>
+<li>Input this expression: select origin_id, destination_id, min(total_cost) as shortest_distance from OD_Hospitals_Before group by origin_id</li>
+<li>Click <strong>Execute</strong> → Check <strong>Load as new layer</strong> → <strong>Load</strong> → Close the DB Manager.</li>
+</ol>
+<p><img src="images/Access_OD_Before.PNG" class="img-fluid"></p>
+<ol start="11" type="1">
+<li>To save as Geopackage, right-click “QueryLayer” layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button and select “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: acc_hospitals_before</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+<li>To join “acc_hospitals_before” and “Accesibility to Hospitals (Before)”, right-click on “Accesibility to Hospitals (Before)” layer, select <strong>Properties</strong>.</li>
+<li>Click <strong>Joins</strong> → <strong>+</strong>.</li>
+<li>Under <strong>Add Vector Join</strong> dialog,
+<ol type="1">
+<li>Join layer: acc_hospitals_before</li>
+<li>Join field: origin_id</li>
+<li>Target field: fid</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+<li>Click <strong>Symbology</strong>, and under the page,
+<ol type="1">
+<li>Select <strong>Graduated</strong>.</li>
+<li>Value: acc_hospitals_before_shortest_distance</li>
+<li>Color ramp: Blues → Invert Color Ramp.</li>
+<li>Classes: 5</li>
+<li>Click <strong>Classify</strong>, <strong>Apply</strong> and <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Access_HexagonBefore.PNG" class="img-fluid"></p>
+<p>We will do the same analysis for after flood.</p>
+<ol type="1">
+<li>Repeat all of the above steps for Accesibility to Hospitals (After).
+<ol type="1">
+<li>Step 4.
+<ol type="1">
+<li>To-Point Layer: Derna_Hospitals_After</li>
+</ol></li>
+<li>Step 6.
+<ol type="1">
+<li>Layer: OD_Hospitals_After</li>
+</ol></li>
+<li>Step 9.
+<ol type="1">
+<li>Expression: select origin_id, destination_id, min(total_cost) as shortest_distance from OD_Hospitals_After group by origin_id.</li>
+</ol></li>
+</ol></li>
+</ol>
+<p><img src="images/Access_OD_After.PNG" class="img-fluid"></p>
+<pre><code>   4. Step 12.
+      1. Layer: acc_hospitals_after
+   5. Step 15.
+      1. Join layer: acc_hospitals_after
+   6. Step 16.
+      1. Color ramp: Greens → Invert Color Ramp.</code></pre>
+<p><img src="images/Access_HexagonAfter.PNG" class="img-fluid"></p>
+</section>
+</section>
+<section id="suitability-analysis" class="level1">
+<h1>Suitability Analysis</h1>
+<ol type="1">
+<li><p>Generate proximity maps for each by converting vector data to raster data.</p></li>
+<li><p>Generate ranking models for each feature.</p></li>
+<li><p>Carry out an AHP Analysis to obtain the importance of each feature.</p></li>
+<li><p>Combine different ranking maps into one output, using the weightages from the AHP Analysis, and multiplying them to their respective features using the Raster Calculator.</p></li>
+<li><p>From the resulting output, we classify the suitability factor by using Reclassification by Table.</p></li>
+<li><p>We identified 3 as the minimum level for an area to be considered “Suitable”.</p></li>
+</ol>
+<section id="data-preparation-and-cleaning-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-cleaning-1">Data Preparation and Cleaning</h2>
+<section id="buildings" class="level3">
+<h3 class="anchored" data-anchor-id="buildings">Buildings</h3>
+<p>To add the Buildings data (gis_osm_buildings_a_free_1.shp).</p>
+<ol type="1">
+<li><p>Click <strong>Layer</strong> → <strong>Add Layer</strong> → <strong>Add Vector Layer…</strong>.</p></li>
+<li><p>Under <strong>Data Source Manager | Vector</strong> dialog,</p>
+<ol type="1">
+<li><p>Click "<strong>…</strong>" and browse "gis_osm_buildings_a_free_1.shp"</p></li>
+<li><p>Click <strong>Add</strong>.</p></li>
+</ol></li>
+<li><p>Click <strong>Vector</strong> → <strong>Geoprocessing Tools</strong> → <strong>Clip</strong>.</p></li>
+<li><p>Under <strong>Clip</strong> dialog,</p>
+<ol type="1">
+<li><p>Input layer: gis_osm_buildings_a_free_1</p></li>
+<li><p>Overlay layer: derna_city_250m_hexagon</p></li>
+<li><p>Click <strong>Run</strong>.</p></li>
+</ol>
+<p><img src="images/Access_Buildings.PNG" class="img-fluid"></p></li>
+<li><p>To save as Geopackage, right-click "gis_osm_buildings_a_free_1.shp" layer → <strong>Export</strong> → <strong>Save Features As</strong>.</p></li>
+<li><p>Under <strong>Save Vector Layer</strong> as dialog,</p>
+<ol type="1">
+<li><p>Format: GeoPackage</p></li>
+<li><p>File name: Click the "…" button to select "Derna" GeoPackage in the "GeoPackage" folder.</p></li>
+<li><p>Layer: Derna_Buildings_Before</p></li>
+<li><p>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</p></li>
+<li><p>Click <strong>Ok</strong>.</p></li>
+</ol></li>
+<li><p>To clean the data, right-click "Derna_Buildings_Before" layer → <strong>Open Attribute Table</strong>.</p>
+<p><img src="images/Access_BuildingsAttribute.PNG" class="img-fluid"></p></li>
+<li><p>Click <strong>Toggle Editing Mode</strong> → <strong>Delete Field</strong>.</p></li>
+<li><p>Delete all fields except for fid and osm_id.</p></li>
+<li><p>Click <strong>Toggle Editing Mode</strong> → <strong>Save</strong>. Close the <strong>Attribute Table</strong> screen.</p></li>
+</ol>
+</section>
+<section id="flood-impact-assessment-1" class="level3">
+<h3 class="anchored" data-anchor-id="flood-impact-assessment-1">Flood Impact Assessment</h3>
+<p>To add the Elevation Model (hdr.adf) in <a href="https://data.humdata.org/dataset/libya-elevation-model">Libya - Elevation Model</a>,</p>
+<ol type="1">
+<li>Click <strong>Layer</strong> → <strong>Add Layer</strong> → <strong>Add Raster Layer…</strong>.</li>
+<li>Under <strong>Data Source Manager | Raster</strong> dialog,
+<ol type="1">
+<li>Click “<strong>…</strong>” and browse “hdr.adf”</li>
+<li>Click <strong>Add</strong>.</li>
+</ol></li>
+<li>To save as Geopackage, right-click “lyb_strm_250m.shp” layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li>Format: GeoPackage</li>
+<li>File name: Click the “…” button to select “Derna” GeoPackage in the “GeoPackage” folder.</li>
+<li>Layer: DEM</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Suit_DEM.PNG" class="img-fluid"></p>
+<p>Next, we will extract out the Derna area only.</p>
+<ol start="5" type="1">
+<li>Select <strong>Raster</strong> → <strong>Extraction</strong> → <strong>Clip Raster by Mask Layer</strong>.</li>
+<li>Under <strong>Clip Raster by Mask Layer</strong> dialog,
+<ol type="1">
+<li>Input layer: DEM</li>
+<li>Mask layer: derna_city_250m_hexagon</li>
+<li>Click <strong>Run</strong> and <strong>Close</strong>.</li>
+</ol></li>
+<li>Replace the “DEM” in the ‘Derna’ GeoPackage with the “Clipped” layer.</li>
+</ol>
+<p><img src="images/Suit_DernaDEM.PNG" class="img-fluid"></p>
+</section>
+</section>
+<section id="multicriteria-decision-analysis-for-dernas-land-suitability" class="level2">
+<h2 class="anchored" data-anchor-id="multicriteria-decision-analysis-for-dernas-land-suitability">Multicriteria Decision Analysis for Derna’s Land Suitability</h2>
+<section id="raster-and-proximity-layers" class="level3">
+<h3 class="anchored" data-anchor-id="raster-and-proximity-layers">Raster and Proximity Layers</h3>
+<p>We will create Raster and Proximity layers to find a suitable area for evacuation centres.</p>
+<section id="buildings-1" class="level4">
+<h4 class="anchored" data-anchor-id="buildings-1">Buildings</h4>
+<ol type="1">
+<li>Select <strong>Raster</strong> → <strong>Conversion</strong> → <strong>Rasterize (Vector to Raster)</strong>.</li>
+<li>Under <strong>Rasterize (Vector to Raster)</strong> dialog,
+<ol type="1">
+<li>Input layer: Derna_Buildings_Before</li>
+<li>Output raster size units: Georeferenced units</li>
+<li>Width/Horizontal resolution: 5</li>
+<li>Height/Vertical resolution: 5</li>
+<li>Output extend: Calculate from Layer → DEM</li>
+<li>Click <strong>Run</strong> and <strong>Close</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Suit_RasterBuildings.PNG" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Right click Rasterized, select <strong>Export</strong> → <strong>Save As</strong>.</li>
+<li>Under <strong>Save Raster Layer as</strong> dialog,
+<ol type="1">
+<li>Format: GeoTIFF</li>
+<li>File name: Click the “…” button and add “raster_buildings” in the “GeoTiff” folder.</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong> and <strong>Close</strong>.</li>
+</ol></li>
+</ol>
+<p>We will create the proximity layer next.</p>
+<ol type="1">
+<li>Select <strong>Raster</strong> → <strong>Analysis</strong> → <strong>Proximity (Raster Distance)</strong>.</li>
+<li>Under <strong>Proximity (Raster Distance)</strong> dialog,
+<ol type="1">
+<li>Input layer: raster_buildings</li>
+<li>Distance units: Georeferenced coordinates</li>
+<li>Output data type: Float32 (This should be by default)</li>
+<li>Click <strong>Run</strong> and <strong>Close</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Suit_ProxBuildings.PNG" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Right click Proximity map, select <strong>Export</strong> → <strong>Save As</strong>.</li>
+<li>Under <strong>Save Raster Layer as</strong> dialog,
+<ol type="1">
+<li>Format: GeoTIFF</li>
+<li>File name: Click the “…” button and add “proximity_buildings” in the “GeoTiff” folder.</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong> and <strong>Close</strong>.</li>
+</ol></li>
+<li>Remove Proximity map and Rasterized layers.</li>
+</ol>
+</section>
+<section id="roads" class="level4">
+<h4 class="anchored" data-anchor-id="roads">Roads</h4>
+<p>Repeat the same steps as <a href="#buildings">Buildings</a>. Below are the reference images for both raster_roads and proximity_roads.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_RasterRoads.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Raster Roads</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_ProxRoads.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Proximity Roads</figcaption>
+</figure>
+</div>
+</section>
+<section id="hospitals" class="level4">
+<h4 class="anchored" data-anchor-id="hospitals">Hospitals</h4>
+<p>Repeat the same steps as <a href="#buildings">Buildings</a>, however, we will be using “Derna_Hospitals_After” layer instead because of the flood extent. Below are the reference images for both raster_roads and proximity_roads.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_RasterHospitals.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Raster Hospital</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_ProxHospitals.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Proximity Hospitals</figcaption>
+</figure>
+</div>
+</section>
+<section id="slope" class="level4">
+<h4 class="anchored" data-anchor-id="slope">Slope</h4>
+<p>We will compute the slope as another important factor to find suitable evacuation centres.</p>
+<ol type="1">
+<li>Select <strong>Raster</strong> → <strong>Analysis</strong> → <strong>Slope</strong>.</li>
+<li>Under <strong>Slope</strong> dialog,
+<ol type="1">
+<li>Input layer: DEM</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+<li>Right click temporary Slope layer, select <strong>Export</strong> → <strong>Save As</strong>.</li>
+<li>Under <strong>Save Raster Layer as</strong> dialog,
+<ol type="1">
+<li>Format: GeoTIFF</li>
+<li>File name: Click the “…” button and add “Slope” in the “GeoTiff” folder.</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong> and <strong>Close</strong>.</li>
+</ol></li>
+<li>Remove the temporary Slope layer.</li>
+</ol>
+</section>
+</section>
+<section id="ranking-model-using-ahp-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="ranking-model-using-ahp-analysis">Ranking Model using AHP Analysis</h3>
+<p>These are the criteria that were set to determine the suitability of building the university.</p>
+<p><a href="#accessibility-factor">Accessibility factor</a> (<strong>Roads</strong>): &lt;=100m = 5, 100-200m = 4, 200-300m = 3, 300-500m = 2, &gt;500m = 1.</p>
+<p><a href="#healthcare-factor-and-urban-settlement-factor">Healthcare factor and Urban Settlement factor</a> (<strong>Hospitals</strong>): &lt;=100m = 5, 100-300m = 4, 300-500m = 3, 500-750m = 2, &gt;750m = 1.</p>
+<p><a href="#economic-factor">Economic factor</a> (<strong>Slope</strong>): &gt;20<sup>o</sup> slope = 5, 18<sup>o</sup>-20<sup>o</sup> = 4, 15<sup>o</sup>-28<sup>o</sup> = 3, 12<sup>o</sup>-15<sup>o</sup> = 2, &lt;=12<sup>o</sup> = 1.</p>
+<section id="accessibility-factor" class="level4">
+<h4 class="anchored" data-anchor-id="accessibility-factor">Accessibility factor</h4>
+<ol type="1">
+<li><p>Select <strong>Processing</strong> → <strong>Toolbox</strong>.</p></li>
+<li><p>Search <strong>Reclassify by Table</strong> in the toolbox's search bar and double click it.</p></li>
+<li><p>Under <strong>Reclassify by Table</strong> dialog,</p></li>
+<li><p>Raster layer: proximity_roads</p></li>
+<li><p>Click “…” at the end of Reclassification table</p>
+<ol type="1">
+<li>Click <strong>Add Row</strong> and input values like the image shown below.</li>
+</ol>
+<p><img src="images/Suit_Roads_Classification.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Click <strong>Ok</strong>.</li>
+<li>Range boundaries: min &lt; value &lt;= max</li>
+<li>Output data type: Float 32 (This should be by default)</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Suit_RankRoads.PNG" class="img-fluid"></p>
+<ol type="1">
+<li>Right click Reclassified raster layer, select <strong>Export</strong> → <strong>Save As</strong>.</li>
+<li>Under <strong>Save Raster Layer as</strong> dialog,
+<ol type="1">
+<li>Format: GeoTIFF</li>
+<li>File name: Click the “…” button and add “rank_accessibility” in the “GeoTiff” folder.</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong> and <strong>Close</strong>.</li>
+</ol></li>
+<li>Remove the Reclassified raster layer.</li>
+</ol>
+</section>
+<section id="healthcare-factor-and-urban-settlement-factor" class="level4">
+<h4 class="anchored" data-anchor-id="healthcare-factor-and-urban-settlement-factor">Healthcare factor and Urban Settlement factor</h4>
+<p>Repeat the same steps as <a href="#accessibility-factor">Accessibility factor</a>. Below are the reference images for rank_healthcare and rank_urban-settlement.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_HospitalBuildings_Classification.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Reclassification table for Hospitals and Buildings</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_RankHospitals.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">rank_healthcare</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_RankBuildings.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">rank_urban-settlement</figcaption>
+</figure>
+</div>
+</section>
+<section id="economic-factor" class="level4" data-link="Economic factor">
+<h4 data-link="Economic factor" class="anchored" data-anchor-id="economic-factor">Economic factor</h4>
+<p>Repeat the same steps as <a href="#accessibility-factor">Accessibility factor</a>. Below are the reference images for rank_economic.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_Slope_Classification.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Reclassification table for Slope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Suit_RankSlope.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">rank_economic</figcaption>
+</figure>
+</div>
+</section>
+<section id="ahp-analysis" class="level4" data-link="Accessibility factor">
+<h4 data-link="Accessibility factor" class="anchored" data-anchor-id="ahp-analysis">AHP Analysis</h4>
+<p>We will compute the rank model using the AHP comparison matrix, and we have prioritized our factors as shown below.</p>
+<p><img src="images/Suit_AHP.PNG" class="img-fluid" width="702"></p>
+<p>Below is the AHP consistency score.</p>
+<p><img src="images/Suit_AHPResults.PNG" class="img-fluid" width="370"></p>
+<ol type="1">
+<li><p>Select <strong>Processing</strong> → <strong>Toolbox</strong>.</p></li>
+<li><p>Search <strong>Raster calculator</strong> in the toolbox's search bar and double click it under “Raster analysis”.</p></li>
+<li><p>Under <strong>Raster calculator</strong> dialog,</p>
+<ol type="1">
+<li>Expression: (“rank_accessibility@1” * 0.278) + (“rank_healthcare@1” * 0.177) + (“rank_economic@1” * 0.388) + (“rank_urban-settlement@1” * 0.158)</li>
+</ol>
+<p><img src="images/Suit_RasterCalculator.PNG" class="img-fluid"></p>
+<ol type="1">
+<li>Click “…” and select “DEM”</li>
+<li>Click <strong>Ok</strong>.</li>
+<li>Output CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Run</strong> and <strong>Close</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Suit_Factor.PNG" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Right click “Output” layer, select <strong>Export</strong> → <strong>Save As</strong>.</li>
+<li>Under <strong>Save Raster Layer as</strong> dialog,
+<ol type="1">
+<li>Format: GeoTIFF</li>
+<li>File name: Click the “…” button and add “factor_suitability” in the “GeoTiff” folder.</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong> and <strong>Close</strong>.</li>
+</ol></li>
+<li>Remove the “Output” layer.</li>
+</ol>
+<p>The factor layer should look like this as the image shown below.</p>
+<p><img src="images/Suit_FactorLayer.PNG" class="img-fluid"></p>
+<ol start="7" type="1">
+<li><p>Select <strong>Processing</strong> à <strong>Toolbox</strong>.</p></li>
+<li><p>Search <strong>Reclassify by Table</strong> in the toolbox's search bar and double click it.</p></li>
+<li><p>Under <strong>Reclassify by Table</strong> dialog,</p>
+<ol type="1">
+<li>Raster layer: factor_suitability</li>
+<li>Click “…” at the end of Reclassification table</li>
+<li>Click Add Row and input values like the image shown below.</li>
+</ol>
+<p><img src="images/Suit_Suitability_Classification.PNG" class="img-fluid"></p>
+<ol type="1">
+<li>Click <strong>OK</strong>.</li>
+<li>Range boundaries: min &lt;= value &lt; max</li>
+<li>Ouput data type: Float 32 (This should be by default)</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+</ol>
+<p><img src="images/Suit_MCDA.PNG" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>Right click Reclassified raster layer, select <strong>Export</strong> à <strong>Save As</strong>.</li>
+<li>Under <strong>Save Raster Layer as</strong> dialog,
+<ol type="1">
+<li>Format: GeoTIFF</li>
+<li>File name: Click the “…” button and add “MCDA_model” in the “GeoTiff” folder.</li>
+<li>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</li>
+<li>Click <strong>Ok</strong>.</li>
+</ol></li>
+<li>Remove the Reclassified raster layer.</li>
+</ol>
+<p>We will set the MCDA Raster map into a Vector to remove the affected flood area.</p>
+<ol start="10" type="1">
+<li>Select <strong>Raster</strong> à <strong>Conversion</strong> à <strong>Polygonize (Raster to Vector)</strong>.</li>
+<li>Under <strong>Polygonize (Raster to Vector)</strong> dialog,
+<ol type="1">
+<li>Input layer: MCDA_model</li>
+<li>Name of the field to create: DN</li>
+<li>Click <strong>Run</strong>.</li>
+</ol></li>
+<li>Click <strong>Vector</strong> → <strong>Geoprocessing Tools</strong> → <strong>Clip</strong>.</li>
+<li>Under <strong>Clip</strong> dialog,
+<ol type="1">
+<li><p>Input layer: Vectorized</p></li>
+<li><p>Overlay layer: PHR_20230913_FloodExtent_Derna</p></li>
+<li><p>Click <strong>Run</strong>.</p></li>
+</ol></li>
+<li>To save as Geopackage, right-click “Clipped” layer → <strong>Export</strong> → <strong>Save Features As</strong>.</li>
+<li>Under <strong>Save Vector Layer</strong> as dialog,
+<ol type="1">
+<li><p>Format: GeoPackage</p></li>
+<li><p>File name: Click the “…” button and select “Derna” GeoPackage in the “GeoPackage” folder.</p></li>
+<li><p>Layer: MCDA_Model_After</p></li>
+<li><p>CRS: EPSG: 32634 - WGS 84 / UTM zone 34N</p></li>
+<li><p>Click <strong>Ok</strong>.</p></li>
+</ol></li>
+<li>Adjust the layer properties until it looks like the image below.</li>
+</ol>
+<p><img src="images/Suit_MCDA_After.PNG" class="img-fluid"></p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
