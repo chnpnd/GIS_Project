@@ -19,6 +19,8 @@ website:
         text: Lessons Learned
       - href: poster.qmd
         text: Project Poster
+      - href: minutes.qmd
+        text: Meeting Minutes
     right:
       - href: index.qmd
         text: Home

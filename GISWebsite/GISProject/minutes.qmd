@@ -1,0 +1,90 @@
+---
+title: "Minutes of Meeting"
+format: html
+editor: visual
+---
+
+**Date:** 15 October 2023\
+**Time:** 10:00 AM - 11:30 AM\
+**Location:** Zoom Meeting (Online)\
+**Attendees:** Zhi Jian, Nelson, Chirag\
+**Absent:** None\
+**Minutes Prepared By:** Zhi Jian
+
+### **1. Opening of Meeting**
+
+The meeting was called to order at 10:00 AM by Zhi Jian. The agenda was approved as distributed.
+
+### **2. Review of Agenda**
+
+The main agenda was to discuss the distribution of tasks for the upcoming project, focusing on the proposal, QGIS analysis, poster creation, and website update.
+
+### **3. Discussion Points**
+
+#### **3.1 Proposal Development**
+
+-   **Lead:** Chirag
+
+-   **Discussion:** Chirag proposed a structured approach to the proposal, emphasizing the need for comprehensive research and a clear outline. Zhi Jian suggested including case studies for a stronger argument.
+
+-   **Disagreement:** None
+
+-   **Consensus:** It was agreed that Nelson would draft the proposal, incorporating case studies as suggested by Zhi Jian.
+
+#### **3.2 QGIS Analysis** 
+
+-   **Lead:** Nelson and Zhi Jian
+
+-   **Discussion:** Nelson proposed a detailed plan for the QGIS analysis, focusing on specific datasets to be used. Zhi Jian offered to assist, citing his experience with similar tools.
+
+-   **Disagreement:** None
+
+-   **Consensus:** Nelson to lead the QGIS analysis with Zhi Jian providing support. The decision was based on Nelson's expertise and Zhi Jian's willingness to learn and assist.
+
+#### **3.3 Poster Creation** 
+
+-   **Lead:** Zhi Jian and Nelson
+
+-   **Discussion:** The team debated the design and content of the poster. Nelson suggested a minimalist design, while Zhi Jian advocated for a more data-centric approach.
+
+-   **Disagreement:** The team initially disagreed on the design approach.
+
+-   **Consensus:** A compromise was reached to combine both ideas, focusing on a clean design with prominent data visualization elements. Zhi Jian and Nelson to collaborate on this task.
+
+#### **3.4 Website Update**  
+
+-   **Lead:** Chirag
+
+-   **Discussion:** Chirag presented a plan for updating the website, including a timeline and key features to be updated.
+
+-   **Disagreement:** None
+
+-   **Consensus:** The team agreed with Chirag's plan. He was given full responsibility for the website update, with the understanding that he would consult the team for any major changes.
+
+### **4. Division of Labour**  
+
+-   **Proposal:** Chirag
+
+-   **QGIS Analysis:** Nelson (Lead), Zhi Jian (Support)
+
+-   **Poster:** Zhi Jian and Nelson (Collaborative Effort)
+
+-   **Website Update:** Chirag
+
+### **5. Considerations in Decision Making**
+
+The decisions were made considering the expertise and interest of each team member. The aim was to leverage individual strengths while fostering collaboration and learning. The team emphasized the importance of a cohesive and well-coordinated effort to ensure the success of the project.
+
+### **6. Next Steps and Deadlines**
+
+-   **Proposal Draft Completion:** By 22 October 2023.
+
+-   **Initial QGIS Analysis:** By 29 October 2023.
+
+-   **Poster Draft:** By 1 November 2023.
+
+-   **Website Update Review:** By 16 November 2023.
+
+### **7. Adjournment**
+
+The meeting was adjourned at 11:30 AM. The next meeting is scheduled for 22 October 2023, at 10:00 AM.
