@@ -17,6 +17,8 @@ website:
         text: Findings
       - href: lessons.qmd
         text: Lessons Learned
+      - href: poster.qmd
+        text: Project Poster
     right:
       - href: index.qmd
         text: Home

@@ -1,0 +1,9 @@
+---
+title: "Project Poster"
+format: html
+editor: visual
+---
+
+## Poster - 
+
+## [![GIS Project Poster](images/Poster.png){width="818" height="1455"}](https://www.canva.com/design/DAFzYP4kPRw/rkKtAmyeimp3rGawWqcPPg/view?utm_content=DAFzYP4kPRw&utm_campaign=designshare&utm_medium=link&utm_source=editor)
