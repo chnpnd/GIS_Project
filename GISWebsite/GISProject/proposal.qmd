@@ -1,0 +1,47 @@
+---
+title: "Proposal"
+format: html
+editor: visual
+---
+
+## Motivation of the project
+
+In recent years, the global surge in record-breaking natural disasters has resulted in catastrophic impacts on communities. The September 2023 dam collapse in Libya, followed by extensive flooding in Derna City, underlines the urgent need for innovative solutions in disaster planning and response. The motivation behind this project is to harness the power of Geographic Information (GI) technologies to mitigate the devastating effects of urban floods, focusing on the aftermath of the Libya dam incident.
+
+## Project Objective
+
+1.  **Change Detection Analysis:**
+
+    -   **Objective:** Detect and analyze changes in the affected region using GeoEye satellite images.
+
+    -   **Rationale:** Understanding the post-event landscape changes is crucial for effective disaster response and recovery.
+
+2.  **Accessibility Analysis:**
+
+    -   **Objective:** Conduct an accessibility analysis to measure the impact of the disaster and identify accessibility challenges.
+
+    -   **Rationale:** Assessing the accessibility of affected areas aids in planning emergency response strategies and resource allocation.
+
+3.  **Land Suitability Study:**
+
+    -   **Objective:** Recommend suitable areas for building emergency evacuation centers and medical services.
+
+    -   **Rationale:** Utilizing GIS-based urban land suitability studies ensures strategic placement of essential facilities for future disaster preparedness.
+
+## Data
+
+-   **OSM Libya (GeoFabrik):**
+
+    -   OpenStreetMap data providing valuable information on the affected region's infrastructure.
+
+-   **Libya Floods (Humanitarian Data Exchange):**
+
+    -   Humanitarian data exchange providing detailed information on the extent and impact of the floods.
+
+-   **GeoEye Satellite Image (Maxar Libya Floods):**
+
+    -   High-resolution satellite images for comprehensive change detection analysis.
+
+## Scope of Work
+
+## Project Schedule

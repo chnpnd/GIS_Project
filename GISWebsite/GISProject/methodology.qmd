@@ -49,11 +49,11 @@ To add the Libya Health Facilities (hotosm_lby_health_facilities_points_shp_poin
 4.  Under **Data Source Manager \| Vector** dialog,
     1.  Click "**...**" and browse "Derna_city_250m_hexagon.shp"
     2.  Click **Add**.
-5.  To save as Geopackage, right-click \"Derna_city_250m_hexagon.shp\" layer → **Export** → **Save Features As**.
+5.  To save as Geopackage, right-click "Derna_city_250m_hexagon.shp" layer → **Export** → **Save Features As**.
 6.  Under **Save Vector Layer** as dialog,
     1.  Format: GeoPackage
 
-    2.  File name: Click the \"...\" button and select \"Derna\" GeoPackage in the \"GeoPackage\" folder.
+    2.  File name: Click the "..." button and select "Derna" GeoPackage in the "GeoPackage" folder.
 
     3.  Layer: derna_city_250m_hexagon
 
@@ -306,7 +306,7 @@ To add the Buildings data (gis_osm_buildings_a_free_1.shp).
 
 2.  Under **Data Source Manager \| Vector** dialog,
 
-    1.  Click \"**...**\" and browse \"gis_osm_buildings_a_free_1.shp\"
+    1.  Click "**...**" and browse "gis_osm_buildings_a_free_1.shp"
 
     2.  Click **Add**.
 
@@ -322,13 +322,13 @@ To add the Buildings data (gis_osm_buildings_a_free_1.shp).
 
     ![](images/Access_Buildings.PNG)
 
-5.  To save as Geopackage, right-click \"gis_osm_buildings_a_free_1.shp\" layer → **Export** → **Save Features As**.
+5.  To save as Geopackage, right-click "gis_osm_buildings_a_free_1.shp" layer → **Export** → **Save Features As**.
 
 6.  Under **Save Vector Layer** as dialog,
 
     1.  Format: GeoPackage
 
-    2.  File name: Click the \"...\" button to select \"Derna\" GeoPackage in the \"GeoPackage\" folder.
+    2.  File name: Click the "..." button to select "Derna" GeoPackage in the "GeoPackage" folder.
 
     3.  Layer: Derna_Buildings_Before
 
@@ -336,7 +336,7 @@ To add the Buildings data (gis_osm_buildings_a_free_1.shp).
 
     5.  Click **Ok**.
 
-7.  To clean the data, right-click \"Derna_Buildings_Before\" layer → **Open Attribute Table**.
+7.  To clean the data, right-click "Derna_Buildings_Before" layer → **Open Attribute Table**.
 
     ![](images/Access_BuildingsAttribute.PNG)
 
@@ -466,7 +466,7 @@ These are the criteria that were set to determine the suitability of building th
 
 1.  Select **Processing** → **Toolbox**.
 
-2.  Search **Reclassify by Table** in the toolbox\'s search bar and double click it.
+2.  Search **Reclassify by Table** in the toolbox's search bar and double click it.
 
 3.  Under **Reclassify by Table** dialog,
 
@@ -523,7 +523,7 @@ Below is the AHP consistency score.
 
 1.  Select **Processing** → **Toolbox**.
 
-2.  Search **Raster calculator** in the toolbox\'s search bar and double click it under "Raster analysis".
+2.  Search **Raster calculator** in the toolbox's search bar and double click it under "Raster analysis".
 
 3.  Under **Raster calculator** dialog,
 
@@ -552,7 +552,7 @@ The factor layer should look like this as the image shown below.
 
 7.  Select **Processing** à **Toolbox**.
 
-8.  Search **Reclassify by Table** in the toolbox\'s search bar and double click it.
+8.  Search **Reclassify by Table** in the toolbox's search bar and double click it.
 
 9.  Under **Reclassify by Table** dialog,
 
