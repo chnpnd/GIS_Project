@@ -1,8 +1,9 @@
 ---
 title: "GIS Project"
 ---
+Welcome to our GIS Project website!
 
 <iframe src="3d.html" style="width: 100%; height: 600px; border: none;"></iframe>
 ---
 
-Welcome to our GIS Project website!
+

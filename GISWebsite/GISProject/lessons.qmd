@@ -4,4 +4,14 @@ format: html
 editor: visual
 ---
 
-## 
+## 1. Diversified Accessibility to Essential Services
+
+The loss of accessibility to hospital services for people in the north indicates the need for a more diversified placement of critical services like healthcare. Ensuring that essential services are accessible from different parts of a city can prevent complete service disruption.
+
+## 2. Geographical Risk Assessment
+
+The specific impact on buildings below 18 degrees latitude suggests that certain areas are more vulnerable due to their geographical location. Regular risk assessments can help in identifying such vulnerable areas and in implementing targeted protective measures.
+
+## 3. Effective Urban Planning
+
+The fact that the flood split the city into two halves indicates a vulnerability in the city's layout and planning. Urban planning should consider natural disaster risks, ensuring that essential services and infrastructure are not concentrated in one area prone to disasters.
