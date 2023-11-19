@@ -17,7 +17,7 @@
 <script src="./Qgis2threejs.js"></script>
 </head>
 <body>
-<div id="legend" style="position: absolute; bottom: 10px; left: 10px; z-index: 1000; background: rgba(255, 255, 255, 0.6); padding: 10px; border-radius: 5px;">
+<div id="legend" style="position: absolute; top: 10px; right: 10px; z-index: 1000; background: rgba(255, 255, 255, 0.6); padding: 10px; border-radius: 5px;">
   <img src="./images/3D-Map-Legends.png" alt="Legend" style="width: auto; height: auto; max-width: 200px; max-height: 200px;">
 </div>
 <div id="view">
@@ -98,7 +98,7 @@
 </div>
 
 <!-- header and footer -->
-<div id="header"></div>
+<div id="header">Derna Map with Evacuation Centres</div>
 <div id="footer"></div>
 
 <!-- layer panel -->
@@ -116,7 +116,8 @@
 
 <script>
 Q3D.Config.allVisible = true;
-
+Q3D.Config.northArrow.enabled = true;
+Q3D.Config.northArrow.color = 0x666666;
 
 var container = document.getElementById("view"),
     app = Q3D.application,

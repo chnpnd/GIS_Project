@@ -2,6 +2,36 @@
 title: "Analysis"
 format: html
 editor: visual
+output:
+  html_document:
+    theme: flatly
+    self_contained: no
 ---
 
-## 
+```{r setup, include=FALSE}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="threeDimension-view-tab" data-bs-toggle="tab" 
+    href="#threeDimension-view" role="tab" aria-controls="threeDimension-view" aria-selected="true">3D View</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="derna-before-tab" data-bs-toggle="tab" href="#derna-before" role="tab" aria-controls="derna-before" aria-selected="false">Derna Before</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="derna-after-tab" data-bs-toggle="tab" href="#derna-after" role="tab" aria-controls="derna-after" aria-selected="false">Derna After</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="threeDimension-view" role="tabpanel" aria-labelledby="threeDimension-view-tab">
+  <iframe src="3d.html" style="width: 100%; height: 600px; border: none;"></iframe>
+  </div>
+  <div class="tab-pane fade" id="derna-before" role="tabpanel" aria-labelledby="derna-before-tab">
+  <iframe src="data/2d/Derna_Before/index.html" style="width: 100%; height: 600px; border: none;"></iframe>
+  </div>
+  <div class="tab-pane fade" id="derna-after" role="tabpanel" aria-labelledby="derna-after-tab">
+  <iframe src="data/2d/Derna_After/index.html" style="width: 100%; height: 600px; border: none;"></iframe>
+  </div>
+</div>
+---

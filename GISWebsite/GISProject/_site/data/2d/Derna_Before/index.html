@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/AccesibilitytoHospitalsBefore_0.js"></script>
+        <script src="data/Roads_1.js"></script>
+        <script src="data/Buildings_2.js"></script>
+        <script src="data/HospitalsBefore_3.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:14
+        }).fitBounds([[32.73893254951368,22.594479260099625],[32.778762120665945,22.680807087690543]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_AccesibilitytoHospitalsBefore_0(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_AccesibilitytoHospitalsBefore_0_0(feature) {
+            if (feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] >= 107.661426 && feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] <= 776.150529 ) {
+                return {
+                pane: 'pane_AccesibilitytoHospitalsBefore_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.7)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,48,107,0.7)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] >= 776.150529 && feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] <= 1271.208580 ) {
+                return {
+                pane: 'pane_AccesibilitytoHospitalsBefore_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.7)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(41,121,185,0.7)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] >= 1271.208580 && feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] <= 1928.609579 ) {
+                return {
+                pane: 'pane_AccesibilitytoHospitalsBefore_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.7)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(115,178,216,0.7)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] >= 1928.609579 && feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] <= 3190.345068 ) {
+                return {
+                pane: 'pane_AccesibilitytoHospitalsBefore_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.7)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(200,220,240,0.7)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] >= 3190.345068 && feature.properties['Derna — acc_hospitals_before_shortest_distance_decimal'] <= 5116.854176 ) {
+                return {
+                pane: 'pane_AccesibilitytoHospitalsBefore_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.7)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,251,255,0.7)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_AccesibilitytoHospitalsBefore_0');
+        map.getPane('pane_AccesibilitytoHospitalsBefore_0').style.zIndex = 400;
+        map.getPane('pane_AccesibilitytoHospitalsBefore_0').style['mix-blend-mode'] = 'normal';
+        var layer_AccesibilitytoHospitalsBefore_0 = new L.geoJson(json_AccesibilitytoHospitalsBefore_0, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AccesibilitytoHospitalsBefore_0',
+            layerName: 'layer_AccesibilitytoHospitalsBefore_0',
+            pane: 'pane_AccesibilitytoHospitalsBefore_0',
+            onEachFeature: pop_AccesibilitytoHospitalsBefore_0,
+            style: style_AccesibilitytoHospitalsBefore_0_0,
+        });
+        bounds_group.addLayer(layer_AccesibilitytoHospitalsBefore_0);
+        map.addLayer(layer_AccesibilitytoHospitalsBefore_0);
+        function pop_Roads_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_Roads_1_0() {
+            return {
+                pane: 'pane_Roads_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Roads_1');
+        map.getPane('pane_Roads_1').style.zIndex = 401;
+        map.getPane('pane_Roads_1').style['mix-blend-mode'] = 'normal';
+        var layer_Roads_1 = new L.geoJson(json_Roads_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Roads_1',
+            layerName: 'layer_Roads_1',
+            pane: 'pane_Roads_1',
+            onEachFeature: pop_Roads_1,
+            style: style_Roads_1_0,
+        });
+        bounds_group.addLayer(layer_Roads_1);
+        map.addLayer(layer_Roads_1);
+        function pop_Buildings_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_Buildings_2_0() {
+            return {
+                pane: 'pane_Buildings_2',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,169,80,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Buildings_2');
+        map.getPane('pane_Buildings_2').style.zIndex = 402;
+        map.getPane('pane_Buildings_2').style['mix-blend-mode'] = 'normal';
+        var layer_Buildings_2 = new L.geoJson(json_Buildings_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Buildings_2',
+            layerName: 'layer_Buildings_2',
+            pane: 'pane_Buildings_2',
+            onEachFeature: pop_Buildings_2,
+            style: style_Buildings_2_0,
+        });
+        bounds_group.addLayer(layer_Buildings_2);
+        map.addLayer(layer_Buildings_2);
+        function pop_HospitalsBefore_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_HospitalsBefore_3_0() {
+            return {
+                pane: 'pane_HospitalsBefore_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/health_pharmacy.svg',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HospitalsBefore_3');
+        map.getPane('pane_HospitalsBefore_3').style.zIndex = 403;
+        map.getPane('pane_HospitalsBefore_3').style['mix-blend-mode'] = 'normal';
+        var layer_HospitalsBefore_3 = new L.geoJson(json_HospitalsBefore_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HospitalsBefore_3',
+            layerName: 'layer_HospitalsBefore_3',
+            pane: 'pane_HospitalsBefore_3',
+            onEachFeature: pop_HospitalsBefore_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_HospitalsBefore_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_HospitalsBefore_3);
+        map.addLayer(layer_HospitalsBefore_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/HospitalsBefore_3.png" /> Hospitals (Before)': layer_HospitalsBefore_3,'<img src="legend/Buildings_2.png" /> Buildings': layer_Buildings_2,'<img src="legend/Roads_1.png" /> Roads': layer_Roads_1,'Accesibility to Hospitals (Before)<br /><table><tr><td style="text-align: center;"><img src="legend/AccesibilitytoHospitalsBefore_0_1087760.png" /></td><td>108 - 776</td></tr><tr><td style="text-align: center;"><img src="legend/AccesibilitytoHospitalsBefore_0_77612711.png" /></td><td>776 - 1271</td></tr><tr><td style="text-align: center;"><img src="legend/AccesibilitytoHospitalsBefore_0_127119292.png" /></td><td>1271 - 1929</td></tr><tr><td style="text-align: center;"><img src="legend/AccesibilitytoHospitalsBefore_0_192931903.png" /></td><td>1929 - 3190</td></tr><tr><td style="text-align: center;"><img src="legend/AccesibilitytoHospitalsBefore_0_319051174.png" /></td><td>3190 - 5117</td></tr></table>': layer_AccesibilitytoHospitalsBefore_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
