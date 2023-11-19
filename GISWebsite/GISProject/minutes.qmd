@@ -4,6 +4,8 @@ format: html
 editor: visual
 ---
 
+# I. Meeting 1
+
 **Date:** 15 October 2023\
 **Time:** 10:00 AM - 11:30 AM\
 **Location:** Zoom Meeting (Online)\
@@ -88,3 +90,217 @@ The decisions were made considering the expertise and interest of each team memb
 ### **7. Adjournment**
 
 The meeting was adjourned at 11:30 AM. The next meeting is scheduled for 22 October 2023, at 10:00 AM.
+
+# II. Meeting 2
+
+**Date:** 22 October 2023\
+**Time:** 10:00 AM - 11:00 AM\
+**Location:** Zoom Meeting (Online)\
+**Attendees:** Zhi Jian, Nelson, Chirag\
+**Absent:** None\
+**Minutes Prepared By:** Zhi Jian
+
+### **1. Opening of Meeting**
+
+The meeting was called to order at 10:00 AM by Zhi Jian. The agenda was approved as distributed.
+
+### **2. Review of Agenda**
+
+The main agenda was to discuss the completion of the proposal and to update the progress on the QGIS analysis.
+
+### **3. Discussion Points**
+
+#### **3.1 Completion of Proposal**
+
+-   **Presenter:** Chirag
+
+-   **Discussion:** Chirag presented the completed proposal, highlighting the research conducted, the structure of the proposal, and the key arguments made. He also mentioned the integration of case studies as previously agreed upon.
+
+-   **Feedback:** Zhi Jian and Nelson provided positive feedback, appreciating the comprehensive nature of the proposal and its clear presentation.
+
+-   **Consensus:** The team unanimously approved the proposal. Nelson was commended for his thorough work.
+
+#### **3.2 Update on QGIS Analysis**
+
+-   **Presenter:** Nelson
+
+-   **Discussion:** Nelson updated the team on the progress of the QGIS analysis. He outlined the datasets used, the initial findings, and the challenges encountered. Zhi Jian contributed to the discussion by sharing his insights from the support role he has been playing.
+
+-   **Challenges:** Zhi Jian mentioned some technical challenges related to data compatibility and analysis accuracy.
+
+-   **Solutions:** Nelson suggested a few workaround strategies.
+
+-   **Next Steps:** Zhi Jian and Nelson agreed to implement the suggested solutions and continue with the analysis, aiming for a preliminary report by the next meeting.
+
+### **4. Additional Points**  
+
+-   **Meeting Schedule:** The team decided to hold weekly meetings every  to ensure consistent progress and timely resolution of any arising issues.
+
+### **5. Action Items**
+
+-   **Zhi Jian and Nelson:** To continue with the QGIS analysis, implementing the discussed solutions.
+
+### **6. Adjournment**
+
+The meeting was adjourned at 11:00 AM. The next meeting is scheduled for 29 October 2023, at 10:00 AM.
+
+# III. Meeting 3
+
+**Date:** 29 October 2023\
+**Time:** 10:00 AM - 11:00 AM\
+**Location:** Zoom Meeting (Online)\
+**Attendees:** Zhi Jian, Nelson, Chirag\
+**Absent:** None\
+**Minutes Prepared By:** Zhi Jian
+
+### **1. Opening of Meeting**
+
+The meeting was called to order at 10:00 AM by Zhi Jian, with all members joining the Zoom call promptly. The agenda was approved as distributed.
+
+### **2. Review of Agenda**
+
+The main agenda items were to discuss the completion of the QGIS analysis and to initiate the poster design process.
+
+### **3. Discussion Points**
+
+#### **3.1 Completion of QGIS Analysis**
+
+-   **Presenter:** Nelson
+
+-   **Discussion:** Nelson presented the completed QGIS analysis, showcasing the data visualizations and key findings. He highlighted how the analysis met the project objectives and outlined the methodology used.
+
+-   **Feedback:** Zhi Jian provided positive feedback, particularly on the clarity of the data representation. Chirag suggested a few minor adjustments to align the analysis more closely with the project requirement.
+
+-   **Consensus:** The team agreed on the final version of the QGIS analysis, with Nelson agreeing to incorporate Chirag's suggestions.
+
+#### **3.2 Start of Poster Design**
+
+-   **Lead:** Nelson and Zhi Jian
+
+-   **Discussion:** Nelson proposed a draft layout for the poster, focusing on a clean and impactful design. Zhi Jian suggested integrating key elements from the QGIS analysis into the design.
+
+-   **Brainstorming:** The team brainstormed ideas for making the poster both informative and visually appealing.
+
+-   **Action Plan:** Nelson and Zhi Jian agreed to collaborate on the poster design, incorporating the team's suggestions. They planned to present a draft in the next meeting.
+
+### **4. Additional Points**
+
+-   **Timeline Review:** The team reviewed the project timeline to ensure all tasks were on track. Minor adjustments were made to accommodate the integration of the QGIS analysis into the poster design.
+
+### **5. Action Items**  
+
+-   **Nelson:** To finalize the QGIS analysis with Chirag's input.
+
+-   **Nelson and Zhi Jian:** To work on the initial draft of the poster and present it in the next meeting.
+
+-   **Chirag:** To continue updating the website.
+
+### **6. Adjournment**
+
+The meeting was adjourned at 11:00 AM. The next meeting is scheduled for 5 November 2023, at 10:00 AM.
+
+# IV. Meeting 4
+
+**Date:** November 5, 2023\
+**Time:** 10:00 AM - 11:00 AM\
+**Location:** Zoom Meeting (Online)\
+**Attendees:** Zhi Jian, Nelson, Chirag\
+**Absent:** None\
+**Minutes Prepared By:** Zhi Jian
+
+### **1. Opening of Meeting**
+
+The meeting was called to order at 10:00 AM by Zhi Jian. All members were present, and the agenda was approved as distributed.
+
+### **2. Review of Agenda**
+
+The main agenda items included the completion of the poster, collaborative efforts on the website, and preparations for the presentation scheduled for November 14, 2023.
+
+### **3. Discussion Points**
+
+#### **3.1 Completion of Poster** 
+
+-   **Presenters:** Nelson and Zhi Jian
+
+-   **Discussion:** Nelson and Zhi Jian presented the final draft of the poster. They highlighted the integration of key elements from the QGIS analysis and the adherence to the agreed design aesthetics.
+
+-   **Feedback:** Chirag commended the design and suggested minor tweaks.
+
+-   **Approval:** The poster was unanimously approved after agreeing to incorporate Chirag's suggestions.
+
+#### **3.2 Collaborative Effort on Website**
+
+-   **Lead:** Chirag
+
+-   **Discussion:** Chirag outlined the status of the website and identified areas where assistance from Nelson and Zhi Jian was needed, particularly in integrating content related to the QGIS analysis and the final poster.
+
+-   **Plan of Action:** It was agreed that all team members would contribute to the website. Nelson would provide textual content; Zhi Jian would provide the poster content and Chirag would oversee the overall design and progress.
+
+-   **Timeline:** The team set a deadline of 16 November 2023, for all website updates to be completed.
+
+#### **3.3 Preparation for Presentation on November 14, 2023**
+
+-   **Discussion:** The team discussed the structure and content of the upcoming presentation. Key roles were assigned for presenting different sections.
+
+-   **Preparation Plan:** Nelson would introduce the project and cover the proposal, Zhi Jian would present the QGIS analysis, and Chirag would discuss the website development and poster design.
+
+-   **Rehearsal Schedule:** The team agreed to hold a rehearsal on November 12, 2023, to practice and finalize the presentation.
+
+### **4. Action Items**  
+
+-   **Nelson:** To provide textual content for the website and prepare the introductory part of the presentation.
+
+-   **Zhi Jian:** To assist with data visualization integration on the website and prepare the QGIS analysis section of the presentation.
+
+-   **Chirag:** To finalize the website updates and lead the poster and website section of the presentation.
+
+### **5. Adjournment**
+
+The meeting was adjourned at 11:00 AM. The next meeting is scheduled for 12 November 2023, at 10:00 AM.
+
+# V. Meeting 5
+
+**Date:** 12 November 2023\
+**Time:** 10:00 AM - 11:30 AM\
+**Location:** Zoom Meeting (Online)\
+**Attendees:** Zhi Jian, Nelson, Chirag\
+**Absent:** None\
+**Minutes Prepared By:** Zhi Jian
+
+### **1. Opening of Meeting**
+
+The meeting was called to order at 10:00 AM by Zhi Jian. The agenda, focusing on the project rehearsal and the progress of the website, was approved as distributed.
+
+### **2. Review of Agenda**
+
+The main objectives were to conduct a rehearsal for the upcoming presentation on 14 November 2023, and to review the progress of the website.
+
+### **3. Discussion Points**
+
+#### **3.1 Project Rehearsal**
+
+-   **Procedure:** Each team member presented their respective sections as planned. Chirag started with the project introduction and proposal overview, followed by Zhi Jian and Nelson presenting the QGIS analysis.
+
+-   **Feedback:** After each section, the team provided constructive feedback. Key suggestions included refining the transitions between sections for a smoother flow and adding a Q&A segment at the end.
+
+-   **Improvements:** The team agreed to make the suggested improvements. Additional emphasis was placed on ensuring a cohesive narrative throughout the presentation.
+
+#### **3.2 Progress of Website**  
+
+-   **Presenter:** Chirag
+
+-   **Discussion:** Chirag showcased the latest version of the website, highlighting the integration of the proposal, QGIS analysis and the finalized poster.
+
+-   **Feedback:** Nelson and Zhi Jian were impressed with the website's design and gave some feedback.
+
+-   **Consensus:** The team agreed on the final changes to the website. Chirag assured that the updates would be completed by 16 November 2023.
+
+### **4. Action Items**
+
+-   **Nelson, Zhi Jian, Chirag:** To implement the final improvements to their presentation sections.
+
+-   **Chirag:** To complete the final updates on the website and conduct a technical check for the presentation setup.
+
+### **5. Adjournment**
+
+The meeting was adjourned at 11:30 AM.
