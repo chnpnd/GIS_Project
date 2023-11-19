@@ -44,4 +44,16 @@ In recent years, the global surge in record-breaking natural disasters has resul
 
 ## Scope of Work
 
+1.  What is the current topographical situation in Derna, and how do factors such as slopes contribute to the region's vulnerability to flooding?
+
+2.  What are the observed consequences and impacts of the recent floods in Derna, including the extent of damage and the areas most severely affected?
+
+3.  How can Analytical Hierarchy Process (AHP) methodology, integrated with elevation models of Derna, be applied to conduct a comprehensive analysis and assessment of flood-related factors?
+
+4.  What are the distinct categories and zones within Derna that can function as closest proximity evacuation zones, taking into account variables such as elevation and accessibility?
+
+5.  In the event of a flood, how effective are the existing potential evacuation sites in terms of service area coverage, and how well can they accommodate and support the affected population?
+
 ## Project Schedule
+
+![Project Schedule](images/Screenshot 2023-11-19 at 10.41.27 PM.png)
