@@ -1,18 +1,31 @@
 ---
 title: "GIS Project"
 ---
-Welcome to our GIS Project website!
+
+Welcome to our GIS Project website, where we will do deeper into understanding the recent floods in Derna, and try to understand potential evacuation zones with the help of GIS techniques and principles, keeping in mind certain factors such as Elevation, Proximity to Relevant areas etc.
+
+## Exploring Derna: A Tapestry of History, Culture, and Coastal Beauty
+
+Derna, located on the northeastern coast of Libya, is a historic and strategically significant city nestled along the shores of the Mediterranean Sea. With a rich cultural heritage dating back centuries, Derna has played a pivotal role in the region's history, witnessing various civilizations and events that have shaped its identity. From its ancient origins to its modern-day significance, Derna stands as a testament to Libya's diverse history and serves as a gateway to the stunning landscapes and historical landmarks of the North African nation.
+
+## Derna Flood
+
+The Derna Flood, occurring on the night of **September 10--11, 2023**, in Derna District, Libya, stands as a devastating chapter in the city's recent history. Triggered by the aftermath of Storm Daniel, the catastrophic failures of two dams led to the release of approximately 30 million cubic meters of water, causing extensive flooding downstream as the Wadi Derna overflowed its banks. The floods inflicted significant damage, partially destroying the city of Derna and resulting in a tragic loss of life. The event, marked by the collapse of key infrastructure, has prompted domestic and international responses, as well as calls for further investigations into the root causes and implications of this second-deadliest dam failure in history.
+
+The map below shows the topography of Derna, along with the potential evacuation centers. The map also extends to include the elevation at different areas of Derna to indicate that the major affected areas were all a part of the most low-lying parts of Derna.
 
 <iframe src="3d.html" style="width: 100%; height: 600px; border: none;">
 
 </iframe>
 
+## Derna, before the flood happened
+
 <iframe src="data/2d/Derna_Before/index.html" style="width: 100%; height: 600px; border: none;">
 
 </iframe>
 
+## Derna, after the flood happened
+
 <iframe src="data/2d/Derna_After/index.html" style="width: 100%; height: 600px; border: none;">
 
 </iframe>
-
-

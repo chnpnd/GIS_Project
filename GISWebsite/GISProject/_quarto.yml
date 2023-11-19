@@ -5,8 +5,6 @@ website:
   title: "GISProject"
   navbar:
     left:
-      - href: introduction.qmd
-        text: Introduction
       - href: proposal.qmd
         text: Proposal
       - href: methodology.qmd
@@ -22,7 +20,7 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - about.qmd
+        
 format:
   html:
     theme: cosmo
