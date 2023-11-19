@@ -12,9 +12,7 @@ website:
       - href: methodology.qmd
         text: Methodology
       - href: analysis.qmd
-        text: Analysis
-      - href: findings.qmd
-        text: Findings
+        text: Analysis & Findings
       - href: lessons.qmd
         text: Lessons Learned
       - href: poster.qmd

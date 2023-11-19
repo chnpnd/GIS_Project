@@ -9,7 +9,7 @@ editor: visual
 **Location:** Zoom Meeting (Online)\
 **Attendees:** Zhi Jian, Nelson, Chirag\
 **Absent:** None\
-**Minutes Prepared By:** Zhi Jian
+**Minutes Prepared By:** Zhi Jiann
 
 ### **1. Opening of Meeting**
 
@@ -31,7 +31,7 @@ The main agenda was to discuss the distribution of tasks for the upcoming projec
 
 -   **Consensus:** It was agreed that Nelson would draft the proposal, incorporating case studies as suggested by Zhi Jian.
 
-#### **3.2 QGIS Analysis** 
+#### **3.2 QGIS Analysis**
 
 -   **Lead:** Nelson and Zhi Jian
 
@@ -41,7 +41,7 @@ The main agenda was to discuss the distribution of tasks for the upcoming projec
 
 -   **Consensus:** Nelson to lead the QGIS analysis with Zhi Jian providing support. The decision was based on Nelson's expertise and Zhi Jian's willingness to learn and assist.
 
-#### **3.3 Poster Creation** 
+#### **3.3 Poster Creation**
 
 -   **Lead:** Zhi Jian and Nelson
 
@@ -51,7 +51,7 @@ The main agenda was to discuss the distribution of tasks for the upcoming projec
 
 -   **Consensus:** A compromise was reached to combine both ideas, focusing on a clean design with prominent data visualization elements. Zhi Jian and Nelson to collaborate on this task.
 
-#### **3.4 Website Update**  
+#### **3.4 Website Update**
 
 -   **Lead:** Chirag
 
@@ -61,7 +61,7 @@ The main agenda was to discuss the distribution of tasks for the upcoming projec
 
 -   **Consensus:** The team agreed with Chirag's plan. He was given full responsibility for the website update, with the understanding that he would consult the team for any major changes.
 
-### **4. Division of Labour**  
+### **4. Division of Labour**
 
 -   **Proposal:** Chirag
 

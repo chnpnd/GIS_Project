@@ -114,9 +114,13 @@
   {
     "objectID": "analysis.html",
     "href": "analysis.html",
-    "title": "Analysis",
+    "title": "Analysis & Findings",
     "section": "",
+<<<<<<< HEAD
     "text": "3D View\n\n\nDerna Before\n\n\nDerna After"
+=======
+    "text": "In the wake of a recent natural disaster, Derna city finds itself grappling with the aftermath of a catastrophic flood that has left an indelible mark on its landscape and the lives of its residents. This analysis delves into the far-reaching consequences of the calamity, focusing on key facets such as the widespread destruction of buildings below the 18-degree latitude line, the crippling damage inflicted upon the city’s central infrastructure, and the profound implications for healthcare accessibility.\nFrom the shattered remnants of once-thriving structures to the isolation of communities and the compromised state of vital medical facilities, the unfolding narrative paints a grim picture of the challenges faced by Derna city in the wake of this unprecedented disaster. As we navigate through the details of this calamity, a comprehensive understanding emerges, highlighting the urgent need for coordinated efforts in rebuilding infrastructure, restoring healthcare services, and providing essential aid to facilitate the city’s recovery.\nGiven below is further analysis based on our findings."
+>>>>>>> origin/main
   },
   {
     "objectID": "analysis.html#quarto",
@@ -158,7 +162,7 @@
     "href": "lessons.html",
     "title": "Lessons Learned",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "The loss of accessibility to hospital services for people in the north indicates the need for a more diversified placement of critical services like healthcare. Ensuring that essential services are accessible from different parts of a city can prevent complete service disruption."
   },
   {
     "objectID": "lessons.html#quarto",
@@ -186,7 +190,7 @@
     "href": "minutes.html",
     "title": "Minutes of Meeting",
     "section": "",
-    "text": "Date: 15 October 2023\nTime: 10:00 AM - 11:30 AM\nLocation: Zoom Meeting (Online)\nAttendees: Zhi Jian, Nelson, Chirag\nAbsent: None\nMinutes Prepared By: Zhi Jian\n\n1. Opening of Meeting\nThe meeting was called to order at 10:00 AM by Zhi Jian. The agenda was approved as distributed.\n\n\n2. Review of Agenda\nThe main agenda was to discuss the distribution of tasks for the upcoming project, focusing on the proposal, QGIS analysis, poster creation, and website update.\n\n\n3. Discussion Points\n\n3.1 Proposal Development\n\nLead: Chirag\nDiscussion: Chirag proposed a structured approach to the proposal, emphasizing the need for comprehensive research and a clear outline. Zhi Jian suggested including case studies for a stronger argument.\nDisagreement: None\nConsensus: It was agreed that Nelson would draft the proposal, incorporating case studies as suggested by Zhi Jian.\n\n\n\n3.2 QGIS Analysis\n\nLead: Nelson and Zhi Jian\nDiscussion: Nelson proposed a detailed plan for the QGIS analysis, focusing on specific datasets to be used. Zhi Jian offered to assist, citing his experience with similar tools.\nDisagreement: None\nConsensus: Nelson to lead the QGIS analysis with Zhi Jian providing support. The decision was based on Nelson’s expertise and Zhi Jian’s willingness to learn and assist.\n\n\n\n3.3 Poster Creation\n\nLead: Zhi Jian and Nelson\nDiscussion: The team debated the design and content of the poster. Nelson suggested a minimalist design, while Zhi Jian advocated for a more data-centric approach.\nDisagreement: The team initially disagreed on the design approach.\nConsensus: A compromise was reached to combine both ideas, focusing on a clean design with prominent data visualization elements. Zhi Jian and Nelson to collaborate on this task.\n\n\n\n3.4 Website Update\n\nLead: Chirag\nDiscussion: Chirag presented a plan for updating the website, including a timeline and key features to be updated.\nDisagreement: None\nConsensus: The team agreed with Chirag’s plan. He was given full responsibility for the website update, with the understanding that he would consult the team for any major changes.\n\n\n\n\n4. Division of Labour\n\nProposal: Chirag\nQGIS Analysis: Nelson (Lead), Zhi Jian (Support)\nPoster: Zhi Jian and Nelson (Collaborative Effort)\nWebsite Update: Chirag\n\n\n\n5. Considerations in Decision Making\nThe decisions were made considering the expertise and interest of each team member. The aim was to leverage individual strengths while fostering collaboration and learning. The team emphasized the importance of a cohesive and well-coordinated effort to ensure the success of the project.\n\n\n6. Next Steps and Deadlines\n\nProposal Draft Completion: By 22 October 2023.\nInitial QGIS Analysis: By 29 October 2023.\nPoster Draft: By 1 November 2023.\nWebsite Update Review: By 16 November 2023.\n\n\n\n7. Adjournment\nThe meeting was adjourned at 11:30 AM. The next meeting is scheduled for 22 October 2023, at 10:00 AM."
+    "text": "Date: 15 October 2023\nTime: 10:00 AM - 11:30 AM\nLocation: Zoom Meeting (Online)\nAttendees: Zhi Jian, Nelson, Chirag\nAbsent: None\nMinutes Prepared By: Zhi Jiann\n\n1. Opening of Meeting\nThe meeting was called to order at 10:00 AM by Zhi Jian. The agenda was approved as distributed.\n\n\n2. Review of Agenda\nThe main agenda was to discuss the distribution of tasks for the upcoming project, focusing on the proposal, QGIS analysis, poster creation, and website update.\n\n\n3. Discussion Points\n\n3.1 Proposal Development\n\nLead: Chirag\nDiscussion: Chirag proposed a structured approach to the proposal, emphasizing the need for comprehensive research and a clear outline. Zhi Jian suggested including case studies for a stronger argument.\nDisagreement: None\nConsensus: It was agreed that Nelson would draft the proposal, incorporating case studies as suggested by Zhi Jian.\n\n\n\n3.2 QGIS Analysis\n\nLead: Nelson and Zhi Jian\nDiscussion: Nelson proposed a detailed plan for the QGIS analysis, focusing on specific datasets to be used. Zhi Jian offered to assist, citing his experience with similar tools.\nDisagreement: None\nConsensus: Nelson to lead the QGIS analysis with Zhi Jian providing support. The decision was based on Nelson’s expertise and Zhi Jian’s willingness to learn and assist.\n\n\n\n3.3 Poster Creation\n\nLead: Zhi Jian and Nelson\nDiscussion: The team debated the design and content of the poster. Nelson suggested a minimalist design, while Zhi Jian advocated for a more data-centric approach.\nDisagreement: The team initially disagreed on the design approach.\nConsensus: A compromise was reached to combine both ideas, focusing on a clean design with prominent data visualization elements. Zhi Jian and Nelson to collaborate on this task.\n\n\n\n3.4 Website Update\n\nLead: Chirag\nDiscussion: Chirag presented a plan for updating the website, including a timeline and key features to be updated.\nDisagreement: None\nConsensus: The team agreed with Chirag’s plan. He was given full responsibility for the website update, with the understanding that he would consult the team for any major changes.\n\n\n\n\n4. Division of Labour\n\nProposal: Chirag\nQGIS Analysis: Nelson (Lead), Zhi Jian (Support)\nPoster: Zhi Jian and Nelson (Collaborative Effort)\nWebsite Update: Chirag\n\n\n\n5. Considerations in Decision Making\nThe decisions were made considering the expertise and interest of each team member. The aim was to leverage individual strengths while fostering collaboration and learning. The team emphasized the importance of a cohesive and well-coordinated effort to ensure the success of the project.\n\n\n6. Next Steps and Deadlines\n\nProposal Draft Completion: By 22 October 2023.\nInitial QGIS Analysis: By 29 October 2023.\nPoster Draft: By 1 November 2023.\nWebsite Update Review: By 16 November 2023.\n\n\n\n7. Adjournment\nThe meeting was adjourned at 11:30 AM. The next meeting is scheduled for 22 October 2023, at 10:00 AM."
   },
   {
     "objectID": "minutes.html#minutes-of-meeting",
@@ -196,6 +200,125 @@
     "text": "Date: 15 October 2023\nTime: 10:00 AM - 11:30 AM\nLocation: Zoom Meeting (Online)\nAttendees: Zhi Jian, Nelson, Chirag\nAbsent: None\nMinutes Prepared By: Zhi Jian\n\n\nThe meeting was called to order at 10:00 AM by Zhi Jian. The agenda was approved as distributed.\n\n\n\nThe main agenda was to discuss the distribution of tasks for the upcoming project, focusing on the proposal, QGIS analysis, poster creation, and website update.\n\n\n\n\n\n\nLead: Chirag\nDiscussion: Chirag proposed a structured approach to the proposal, emphasizing the need for comprehensive research and a clear outline. Zhi Jian suggested including case studies for a stronger argument.\nDisagreement: None\nConsensus: It was agreed that Nelson would draft the proposal, incorporating case studies as suggested by Zhi Jian.\n\n\n\n\n\nLead: Nelson and Zhi Jian\nDiscussion: Nelson proposed a detailed plan for the QGIS analysis, focusing on specific datasets to be used. Zhi Jian offered to assist, citing his experience with similar tools.\nDisagreement: None\nConsensus: Nelson to lead the QGIS analysis with Zhi Jian providing support. The decision was based on Nelson’s expertise and Zhi Jian’s willingness to learn and assist.\n\n\n\n\n\nLead: Zhi Jian and Nelson\nDiscussion: The team debated the design and content of the poster. Nelson suggested a minimalist design, while Zhi Jian advocated for a more data-centric approach.\nDisagreement: The team initially disagreed on the design approach.\nConsensus: A compromise was reached to combine both ideas, focusing on a clean design with prominent data visualization elements. Zhi Jian and Nelson to collaborate on this task.\n\n\n\n\n\nLead: Chirag\nDiscussion: Chirag presented a plan for updating the website, including a timeline and key features to be updated.\nDisagreement: None\nConsensus: The team agreed with Chirag’s plan. He was given full responsibility for the website update, with the understanding that he would consult the team for any major changes.\n\n\n\n\n\n\nProposal: Chirag\nQGIS Analysis: Nelson (Lead), Zhi Jian (Support)\nPoster: Zhi Jian and Nelson (Collaborative Effort)\nWebsite Update: Chirag\n\n\n\n\nThe decisions were made considering the expertise and interest of each team member. The aim was to leverage individual strengths while fostering collaboration and learning. The team emphasized the importance of a cohesive and well-coordinated effort to ensure the success of the project.\n\n\n\n\nProposal Draft Completion: By 22 October 2023.\nInitial QGIS Analysis: By 29 October 2023.\nPoster Draft: By 1 November 2023.\nWebsite Update Review: By 16 November 2023.\n\n\n\n\nThe meeting was adjourned at 11:30 AM. The next meeting is scheduled for 22 October 2023, at 10:00 AM."
   },
   {
+<<<<<<< HEAD
+    "objectID": "analysis.html#flood-impact-on-buildings-below-18-degrees-latitude",
+    "href": "analysis.html#flood-impact-on-buildings-below-18-degrees-latitude",
+    "title": "Analysis & Findings",
+    "section": "Flood Impact on Buildings Below 18 Degrees Latitude",
+    "text": "Flood Impact on Buildings Below 18 Degrees Latitude\nThis point suggests that a significant natural disaster, likely a flood, has affected all buildings situated below a specific latitude (18 degrees) in Derna city. This could indicate widespread structural damage to residential, commercial, and public buildings in this geographical area. The reference to a specific latitude implies that the flood had a clear demarcation line, possibly influenced by geographical features or the flood’s origin."
+  },
+  {
+    "objectID": "analysis.html#destruction-of-roads-in-the-city-center",
+    "href": "analysis.html#destruction-of-roads-in-the-city-center",
+    "title": "Analysis & Findings",
+    "section": "Destruction of Roads in the City Center",
+    "text": "Destruction of Roads in the City Center\nThe flood has caused extensive damage to the infrastructure in the city center, particularly the roads. This destruction has effectively divided the city into two isolated halves, severely disrupting transportation and communication within the city. The loss of central roadways would hinder emergency response efforts, delay essential services, and create logistical challenges for residents and authorities."
+  },
+  {
+    "objectID": "analysis.html#impact-on-healthcare-facilities",
+    "href": "analysis.html#impact-on-healthcare-facilities",
+    "title": "Analysis & Findings",
+    "section": "Impact on Healthcare Facilities",
+    "text": "Impact on Healthcare Facilities\nFour hospitals in Derna city were either damaged or completely destroyed by the flood. This is a critical issue as it directly affects the city’s healthcare services. The damage to these hospitals would drastically reduce the capacity for medical care and emergency response, just when it is most needed. This could lead to delays in treatment, insufficient medical care for the injured, and increased pressure on any remaining medical facilities."
+  },
+  {
+    "objectID": "analysis.html#widespread-damage-to-buildings",
+    "href": "analysis.html#widespread-damage-to-buildings",
+    "title": "Analysis & Findings",
+    "section": "Widespread Damage to Buildings",
+    "text": "Widespread Damage to Buildings\nThe flood has caused extensive damage to a large number of buildings, with 3,311 structures reported as damaged or destroyed. This figure indicates a massive impact on housing and could lead to a significant displacement of residents. The destruction of this scale would require a substantial and prolonged recovery and rebuilding effort, impacting the city’s economy and the well-being of its inhabitants."
+  },
+  {
+    "objectID": "analysis.html#loss-of-hospital-accessibility-for-northern-residents",
+    "href": "analysis.html#loss-of-hospital-accessibility-for-northern-residents",
+    "title": "Analysis & Findings",
+    "section": "Loss of Hospital Accessibility for Northern Residents",
+    "text": "Loss of Hospital Accessibility for Northern Residents\nPeople living in the northern part of Derna city have lost access to hospital services due to the flood. This could be due to the destruction of roads, the damage to the hospitals themselves, or both. The lack of accessible healthcare is particularly concerning in the aftermath of a disaster, as it increases the risk of untreated injuries and illnesses. It also suggests a need for temporary healthcare solutions, such as mobile clinics or support from neighboring regions."
+  },
+  {
+    "objectID": "analysis.html#section",
+    "href": "analysis.html#section",
+    "title": "Analysis",
+    "section": "",
+    "text": "Conclusion\nOverall, the flood in Derna city has caused catastrophic damage affecting infrastructure, healthcare, and the lives of thousands of residents. The recovery process would require coordinated efforts involving infrastructure rebuilding, healthcare support, and humanitarian aid to address the immediate and long-term needs of the affected population."
+  },
+  {
+    "objectID": "analysis.html#conclusion",
+    "href": "analysis.html#conclusion",
+    "title": "Analysis & Findings",
+    "section": "Conclusion",
+    "text": "Conclusion\nThus, overall, the flood in Derna city has caused catastrophic damage affecting infrastructure, healthcare, and the lives of thousands of residents. The recovery process would require coordinated efforts involving infrastructure rebuilding, healthcare support, and humanitarian aid to address the immediate and long-term needs of the affected population."
+  },
+  {
+    "objectID": "lessons.html#section",
+    "href": "lessons.html#section",
+    "title": "Lessons Learned",
+    "section": "",
+    "text": "Geographical Risk Assessment\n\nThe specific impact on buildings below 18 degrees latitude suggests that certain areas are more vulnerable due to their geographical location. Regular risk assessments can help in identifying such vulnerable areas and in implementing targeted protective measures."
+  },
+  {
+    "objectID": "lessons.html#diversified-accessibility-to-essential-services",
+    "href": "lessons.html#diversified-accessibility-to-essential-services",
+    "title": "Lessons Learned",
+    "section": "",
+    "text": "The loss of accessibility to hospital services for people in the north indicates the need for a more diversified placement of critical services like healthcare. Ensuring that essential services are accessible from different parts of a city can prevent complete service disruption."
+  },
+  {
+    "objectID": "lessons.html#section-1",
+    "href": "lessons.html#section-1",
+    "title": "Lessons Learned",
+    "section": "",
+    "text": "Effective Urban Planning\n\nThe fact that the flood split the city into two halves indicates a vulnerability in the city’s layout and planning. Urban planning should consider natural disaster risks, ensuring that essential services and infrastructure are not concentrated in one area prone to disasters."
+  },
+  {
+    "objectID": "lessons.html#geographical-risk-assessment",
+    "href": "lessons.html#geographical-risk-assessment",
+    "title": "Lessons Learned",
+    "section": "2. Geographical Risk Assessment",
+    "text": "2. Geographical Risk Assessment\nThe specific impact on buildings below 18 degrees latitude suggests that certain areas are more vulnerable due to their geographical location. Regular risk assessments can help in identifying such vulnerable areas and in implementing targeted protective measures."
+  },
+  {
+    "objectID": "lessons.html#effective-urban-planning",
+    "href": "lessons.html#effective-urban-planning",
+    "title": "Lessons Learned",
+    "section": "3. Effective Urban Planning",
+    "text": "3. Effective Urban Planning\nThe fact that the flood split the city into two halves indicates a vulnerability in the city’s layout and planning. Urban planning should consider natural disaster risks, ensuring that essential services and infrastructure are not concentrated in one area prone to disasters."
+  },
+  {
+    "objectID": "analysis.html#i.-flood-impact-on-buildings-below-18-degrees-latitude",
+    "href": "analysis.html#i.-flood-impact-on-buildings-below-18-degrees-latitude",
+    "title": "Analysis & Findings",
+    "section": "I. Flood Impact on Buildings Below 18 Degrees Latitude",
+    "text": "I. Flood Impact on Buildings Below 18 Degrees Latitude\nThis point suggests that a significant natural disaster, likely a flood, has affected all buildings situated below a specific latitude (18 degrees) in Derna city. This could indicate widespread structural damage to residential, commercial, and public buildings in this geographical area. The reference to a specific latitude implies that the flood had a clear demarcation line, possibly influenced by geographical features or the flood’s origin."
+  },
+  {
+    "objectID": "analysis.html#ii.-destruction-of-roads-in-the-city-center",
+    "href": "analysis.html#ii.-destruction-of-roads-in-the-city-center",
+    "title": "Analysis & Findings",
+    "section": "II. Destruction of Roads in the City Center",
+    "text": "II. Destruction of Roads in the City Center\nThe flood has caused extensive damage to the infrastructure in the city center, particularly the roads. This destruction has effectively divided the city into two isolated halves, severely disrupting transportation and communication within the city. The loss of central roadways would hinder emergency response efforts, delay essential services, and create logistical challenges for residents and authorities."
+  },
+  {
+    "objectID": "analysis.html#iii.-impact-on-healthcare-facilities",
+    "href": "analysis.html#iii.-impact-on-healthcare-facilities",
+    "title": "Analysis & Findings",
+    "section": "III. Impact on Healthcare Facilities",
+    "text": "III. Impact on Healthcare Facilities\nFour hospitals in Derna city were either damaged or completely destroyed by the flood. This is a critical issue as it directly affects the city’s healthcare services. The damage to these hospitals would drastically reduce the capacity for medical care and emergency response, just when it is most needed. This could lead to delays in treatment, insufficient medical care for the injured, and increased pressure on any remaining medical facilities."
+  },
+  {
+    "objectID": "analysis.html#iv.-widespread-damage-to-buildings",
+    "href": "analysis.html#iv.-widespread-damage-to-buildings",
+    "title": "Analysis & Findings",
+    "section": "IV. Widespread Damage to Buildings",
+    "text": "IV. Widespread Damage to Buildings\nThe flood has caused extensive damage to a large number of buildings, with 3,311 structures reported as damaged or destroyed. This figure indicates a massive impact on housing and could lead to a significant displacement of residents. The destruction of this scale would require a substantial and prolonged recovery and rebuilding effort, impacting the city’s economy and the well-being of its inhabitants."
+  },
+  {
+    "objectID": "analysis.html#v.-loss-of-hospital-accessibility-for-northern-residents",
+    "href": "analysis.html#v.-loss-of-hospital-accessibility-for-northern-residents",
+    "title": "Analysis & Findings",
+    "section": "V. Loss of Hospital Accessibility for Northern Residents",
+    "text": "V. Loss of Hospital Accessibility for Northern Residents\nPeople living in the northern part of Derna city have lost access to hospital services due to the flood. This could be due to the destruction of roads, the damage to the hospitals themselves, or both. The lack of accessible healthcare is particularly concerning in the aftermath of a disaster, as it increases the risk of untreated injuries and illnesses. It also suggests a need for temporary healthcare solutions, such as mobile clinics or support from neighboring regions."
+
     "objectID": "index.html#section",
     "href": "index.html#section",
     "title": "GIS Project",
