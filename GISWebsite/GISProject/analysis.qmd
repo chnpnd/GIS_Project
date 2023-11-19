@@ -2,8 +2,39 @@
 title: "Analysis & Findings"
 format: html
 editor: visual
+output:
+  html_document:
+    theme: flatly
+    self_contained: no
 ---
 
+```{r setup, include=FALSE}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="threeDimension-view-tab" data-bs-toggle="tab" 
+    href="#threeDimension-view" role="tab" aria-controls="threeDimension-view" aria-selected="true">3D View</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="derna-before-tab" data-bs-toggle="tab" href="#derna-before" role="tab" aria-controls="derna-before" aria-selected="false">Derna Before</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="derna-after-tab" data-bs-toggle="tab" href="#derna-after" role="tab" aria-controls="derna-after" aria-selected="false">Derna After</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="threeDimension-view" role="tabpanel" aria-labelledby="threeDimension-view-tab">
+  <iframe src="3d.html" style="width: 100%; height: 600px; border: none;"></iframe>
+  </div>
+  <div class="tab-pane fade" id="derna-before" role="tabpanel" aria-labelledby="derna-before-tab">
+  <iframe src="data/2d/Derna_Before/index.html" style="width: 100%; height: 600px; border: none;"></iframe>
+  </div>
+  <div class="tab-pane fade" id="derna-after" role="tabpanel" aria-labelledby="derna-after-tab">
+  <iframe src="data/2d/Derna_After/index.html" style="width: 100%; height: 600px; border: none;"></iframe>
+  </div>
+</div>
+---
 In the wake of a recent natural disaster, Derna city finds itself grappling with the aftermath of a catastrophic flood that has left an indelible mark on its landscape and the lives of its residents. This analysis delves into the far-reaching consequences of the calamity, focusing on key facets such as the widespread destruction of buildings below the 18-degree latitude line, the crippling damage inflicted upon the city's central infrastructure, and the profound implications for healthcare accessibility.
 
 From the shattered remnants of once-thriving structures to the isolation of communities and the compromised state of vital medical facilities, the unfolding narrative paints a grim picture of the challenges faced by Derna city in the wake of this unprecedented disaster. As we navigate through the details of this calamity, a comprehensive understanding emerges, highlighting the urgent need for coordinated efforts in rebuilding infrastructure, restoring healthcare services, and providing essential aid to facilitate the city's recovery.
@@ -33,3 +64,4 @@ People living in the northern part of Derna city have lost access to hospital se
 ## Conclusion
 
 Thus, overall, the flood in Derna city has caused catastrophic damage affecting infrastructure, healthcare, and the lives of thousands of residents. The recovery process would require coordinated efforts involving infrastructure rebuilding, healthcare support, and humanitarian aid to address the immediate and long-term needs of the affected population.
+

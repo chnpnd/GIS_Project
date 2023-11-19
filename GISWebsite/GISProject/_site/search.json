@@ -116,7 +116,11 @@
     "href": "analysis.html",
     "title": "Analysis & Findings",
     "section": "",
+<<<<<<< HEAD
+    "text": "3D View\n\n\nDerna Before\n\n\nDerna After"
+=======
     "text": "In the wake of a recent natural disaster, Derna city finds itself grappling with the aftermath of a catastrophic flood that has left an indelible mark on its landscape and the lives of its residents. This analysis delves into the far-reaching consequences of the calamity, focusing on key facets such as the widespread destruction of buildings below the 18-degree latitude line, the crippling damage inflicted upon the city’s central infrastructure, and the profound implications for healthcare accessibility.\nFrom the shattered remnants of once-thriving structures to the isolation of communities and the compromised state of vital medical facilities, the unfolding narrative paints a grim picture of the challenges faced by Derna city in the wake of this unprecedented disaster. As we navigate through the details of this calamity, a comprehensive understanding emerges, highlighting the urgent need for coordinated efforts in rebuilding infrastructure, restoring healthcare services, and providing essential aid to facilitate the city’s recovery.\nGiven below is further analysis based on our findings."
+>>>>>>> origin/main
   },
   {
     "objectID": "analysis.html#quarto",
